@@ -25,7 +25,6 @@
             "src/head.php",
             "src/map.php",
             "src/pipe.php",
-            "src/sum.php",
             "src/tail.php"
         ]
     },
