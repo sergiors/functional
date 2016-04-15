@@ -19,6 +19,7 @@
         "files": [
             "src/compose.php",
             "src/curry.php",
+            "src/every.php",
             "src/filter.php",
             "src/flatten.php",
             "src/has.php",
