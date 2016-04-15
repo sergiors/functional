@@ -18,8 +18,10 @@
     "autoload": {
         "files": [
             "src/compose.php",
+            "src/curry.php",
             "src/filter.php",
             "src/flatten.php",
+            "src/has.php",
             "src/head.php",
             "src/map.php",
             "src/pipe.php",

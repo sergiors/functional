@@ -2,9 +2,9 @@
 
 function filter($fn, $ls)
 {
-    return array_reduce($ls, function ($carry, $item) use ($fn) {
-        if ($fn($item)) {
-            $carry[] = $item;
+    return array_reduce($ls, function ($carry, $curr) use ($fn) {
+        if ($fn($curr)) {
+            $carry[] = $curr;
             return $carry;
         }
 
