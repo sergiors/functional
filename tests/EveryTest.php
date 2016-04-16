@@ -20,13 +20,18 @@ class EveryTest extends \PHPUnit_Framework_TestCase
         ];
 
         $actual = every(function ($options) {
+            $hasdsn = has('dsn');
+            if ($hasdsn($options)) {
+                return $options;
+            }
+
             $options['dsn'] = null;
             return $options;
         }, $dbs);
 
         $expected = [
             'db1' => [
-                'dsn' => null
+                'dsn' => ''
             ],
             'db2' => [
                 'options' => [],
