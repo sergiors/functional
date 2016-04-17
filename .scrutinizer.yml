@@ -1,4 +1,12 @@
 build:
+    environment:
+        mysql: false
+        postgresql: false
+        redis: false
+        rabbitmq: false
+        php:
+            version: 5.6
+
     tests:
         override:
             -
