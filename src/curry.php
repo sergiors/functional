@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ *
+ * @param mixed $fn
+ *
+ * @return \Closure
+ */
 function curry($fn)
 {
     $args = tail(func_get_args());

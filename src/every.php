@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ *
+ * @param \Closure $fn
+ * @param array    $ls
+ *
+ * @return array
+ */
 function every($fn, $ls)
 {
     $keys = array_keys($ls);

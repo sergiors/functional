@@ -1,6 +1,8 @@
 <?php
 
 /**
+ * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ * 
  * Performs left-to-right function composition.
  * The leftmost function may have any arity; the remaining functions must be unary.
  *

@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ * 
+ * @param string $prop
+ *
+ * @return mixed
+ */
 function has($prop)
 {
     $has = function ($prop, $ls) {
