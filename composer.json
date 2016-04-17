@@ -19,9 +19,11 @@
         "files": [
             "src/compose.php",
             "src/curry.php",
+            "src/equals.php",
             "src/every.php",
             "src/filter.php",
             "src/flatten.php",
+            "src/gt.php",
             "src/has.php",
             "src/head.php",
             "src/map.php",

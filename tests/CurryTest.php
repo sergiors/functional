@@ -9,12 +9,13 @@ class CurryTest extends \PHPUnit_Framework_TestCase
      */
     public function curry()
     {
-        $greeter = function ($greeting, $separator, $emphasis, $name) {
+        $greeter = curry(function ($greeting, $separator, $emphasis, $name) {
             return $greeting.$separator.$name.$emphasis;
-        };
+        });
 
-        $hello = curry($greeter, 'Hello', ', ', '.');
+        $hello = $greeter('Hello', ', ', '.');
         $this->assertEquals('Hello, Jack.', $hello('Jack'));
+        $this->assertEquals('Hello, James.', $hello('James'));
 
         $addFourNumbers = curry(function ($x, $y, $z, $xx) {
             return $x + $y + $z + $xx;
@@ -23,7 +24,13 @@ class CurryTest extends \PHPUnit_Framework_TestCase
         $f = $addFourNumbers(1, 2);
         $g = $f(3);
         $this->assertEquals(10, $g(4));
+    }
 
+    /**
+     * @test
+     */
+    public function deepCurry()
+    {
         $four = curry(function ($a, $b, $c, $d) {
             return $a + $b + $c + $d;
         });
