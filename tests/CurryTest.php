@@ -40,5 +40,19 @@ class CurryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(10, $z(4));
 
         $this->assertEquals(10, $four(1, 2, 3, 4));
+
+        $x = curry(function ($a, $b, $c) {
+            return $a($b($c));
+        });
+        
+        $y = $x(function ($x) {
+            return $x + 1;
+        });
+
+        $z = $y(function ($x) {
+            return $x * 2;
+        });
+
+        $this->assertEquals(21, $z(10));
     }
 }
