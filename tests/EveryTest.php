@@ -27,7 +27,7 @@ class EveryTest extends \PHPUnit_Framework_TestCase
 
             $options['dsn'] = null;
             return $options;
-        }, $dbs);
+        });
 
         $expected = [
             'db1' => [
@@ -42,6 +42,6 @@ class EveryTest extends \PHPUnit_Framework_TestCase
             ]
         ];
 
-        $this->assertEquals($expected, $actual);
+        $this->assertEquals($expected, $actual($dbs));
     }
 }

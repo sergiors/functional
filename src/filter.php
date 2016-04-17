@@ -3,19 +3,15 @@
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param \Closure $fn
- * @param array    $ls
- *
- * @return array
+ * @return mixed
  */
-function filter($fn, $ls)
+function filter()
 {
-    return array_reduce($ls, function ($carry, $curr) use ($fn) {
-        if ($fn($curr)) {
-            $carry[] = $curr;
-            return $carry;
-        }
+    $args = func_get_args();
 
-        return $carry;
-    }, []);
+    $filter = function ($fn, $ls) {
+        return array_filter($ls, $fn);
+    };
+
+    return call_user_func_array(curry($filter), $args);
 }
