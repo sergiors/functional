@@ -16,4 +16,17 @@ class HasTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($hasName(['name' => 'Jack']));
         $this->assertFalse($hasName([]));
     }
+
+    /**
+     * @test
+     */
+    public function withObject()
+    {
+        $hasName = has('name');
+
+        $user = new \stdClass();
+        $user->name = 'Jack';
+
+        $this->assertTrue($hasName($user));
+    }
 }
