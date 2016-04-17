@@ -3,9 +3,9 @@
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param mixed $fn
+ * @param \Closure $fn
  *
- * @return \Closure
+ * @return mixed
  */
 function curry($fn)
 {
