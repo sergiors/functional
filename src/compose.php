@@ -1,8 +1,10 @@
 <?php
 
+namespace Sergiors\Functional;
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
- * 
+ *
  * Performs right-to-left function composition.
  * The rightmost function may have any arity; the remaining functions must be unary.
  *
@@ -11,5 +13,5 @@
 function compose()
 {
     $args = func_get_args();
-    return call_user_func_array('pipe', array_reverse($args));
+    return call_user_func_array(__NAMESPACE__.'\pipe', array_reverse($args));
 }

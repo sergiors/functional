@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional\Tests;
 
+use function Sergiors\Functional\pipe;
+
 class PipeTest extends \PHPUnit_Framework_TestCase
 {
     /**

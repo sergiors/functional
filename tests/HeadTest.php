@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional\Tests;
 
+use function Sergiors\Functional\head;
+
 class HeadTest extends \PHPUnit_Framework_TestCase
 {
     /**

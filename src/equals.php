@@ -1,5 +1,9 @@
 <?php
 
+namespace Sergiors\Functional;
+
+use function Sergiors\Functional\curry;
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

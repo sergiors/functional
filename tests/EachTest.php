@@ -2,12 +2,15 @@
 
 namespace Sergiors\Functional\Tests;
 
-class EveryTest extends \PHPUnit_Framework_TestCase
+use function Sergiors\Functional\each;
+use function Sergiors\Functional\has;
+
+class EachTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
      */
-    public function every()
+    public function each()
     {
         $dbs = [
             'db1' => [
@@ -19,7 +22,7 @@ class EveryTest extends \PHPUnit_Framework_TestCase
             'db3' => []
         ];
 
-        $actual = every(function ($options) {
+        $actual = each(function ($options) {
             $hasdsn = has('dsn');
             if ($hasdsn($options)) {
                 return $options;

@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional\Tests;
 
+use function Sergiors\Functional\gt;
+
 class GtTest extends \PHPUnit_Framework_TestCase
 {
     /**

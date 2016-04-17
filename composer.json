@@ -16,11 +16,14 @@
         "phpunit/phpunit": "^4.8"
     },
     "autoload": {
+        "psr-4": {
+            "Sergiors\\Functional\\": "src"
+        },
         "files": [
             "src/compose.php",
             "src/curry.php",
+            "src/each.php",
             "src/equals.php",
-            "src/every.php",
             "src/filter.php",
             "src/flatten.php",
             "src/gt.php",

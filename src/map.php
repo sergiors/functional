@@ -1,5 +1,7 @@
 <?php
 
+namespace Sergiors\Functional;
+
 /**
  * Just an alias
  *

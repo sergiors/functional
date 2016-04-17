@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional\Tests;
 
+use function Sergiors\Functional\has;
+
 class HasTest extends \PHPUnit_Framework_TestCase
 {
     /**

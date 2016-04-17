@@ -1,5 +1,7 @@
 <?php
 
+namespace Sergiors\Functional;
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

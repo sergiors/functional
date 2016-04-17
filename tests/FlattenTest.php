@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional\Tests;
 
+use function Sergiors\Functional\flatten;
+
 class FlattenTest extends \PHPUnit_Framework_TestCase
 {
     /**

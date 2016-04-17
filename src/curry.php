@@ -1,5 +1,7 @@
 <?php
 
+namespace Sergiors\Functional;
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
@@ -17,7 +19,7 @@ function curry($fn)
 
         if ($count > count($args)) {
             array_unshift($args, $fn);
-            return call_user_func_array('curry', $args);
+            return call_user_func_array(__NAMESPACE__.'\curry', $args);
         }
 
         return call_user_func_array($fn, $args);

@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional\Tests;
 
+use function Sergiors\Functional\map;
+
 class MapTest extends \PHPUnit_Framework_TestCase
 {
     /**

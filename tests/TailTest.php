@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional\Tests;
 
+use function Sergiors\Functional\tail;
+
 class TailTest extends \PHPUnit_Framework_TestCase
 {
     /**
