@@ -2,7 +2,7 @@
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
- * 
+ *
  * @param \Closure $fn
  * @param array    $ls
  *

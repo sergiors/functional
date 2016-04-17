@@ -3,7 +3,7 @@
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param \Closure $fn
+ * @param \Closure|string $fn
  *
  * @return mixed
  */

@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
- * 
- * @param \Closure $fn
- * @param array    $ls
+ * Just an alias
  *
- * @return array
+ * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ *
+ * @link http://php.net/array_map
  */
-function map($fn, $ls)
+function map()
 {
-    return array_map($fn, $ls);
+    $args = func_get_args();
+    return call_user_func_array(curry('array_map'), $args);
 }
