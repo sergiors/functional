@@ -7,7 +7,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function has()
+function prop()
 {
     $args = func_get_args();
 
@@ -17,13 +17,13 @@ function has()
      *
      * @return bool
      */
-    $has = function ($prop, $ls) {
-        if (is_object($ls)) {
-            $ls = (array) $ls;
+    $prop = function ($prop, $ls) {
+        if (has($prop, $ls)) {
+            return $ls[$prop];
         }
 
-        return array_key_exists($prop, $ls);
+        return false;
     };
 
-    return call_user_func_array(curry($has), $args);
+    return call_user_func_array(curry($prop), $args);
 }

@@ -2,24 +2,24 @@
 
 namespace Sergiors\Functional;
 
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function equals()
+function not()
 {
     $args = func_get_args();
 
     /**
-     * @param mixed $a
-     * @param mixed $b
+     * @param mixed $val
      *
      * @return bool
      */
-    $equals = function ($a, $b) {
-        return $a === $b;
+    $not = function ($val) {
+        return !$val;
     };
 
-    return call_user_func_array(curry($equals), $args);
+    return call_user_func_array(curry($not), $args);
 }

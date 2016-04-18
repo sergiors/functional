@@ -9,19 +9,20 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function filter()
+function reduce()
 {
     $args = func_get_args();
 
     /**
      * @param \Closure $fn
      * @param array    $ls
+     * @param null    $initial
      *
-     * @return array
+     * @return mixed
      */
-    $filter = function ($fn, $ls) {
-        return array_filter($ls, $fn);
+    $reduce = function ($fn, $ls, $initial = null) {
+        return array_reduce($ls, $fn, $initial);
     };
 
-    return call_user_func_array(curry($filter), $args);
+    return call_user_func_array(curry($reduce), $args);
 }

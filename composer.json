@@ -35,8 +35,12 @@
             "src/gt.php",
             "src/has.php",
             "src/head.php",
+            "src/lt.php",
             "src/map.php",
+            "src/not.php",
             "src/pipe.php",
+            "src/prop.php",
+            "src/reduce.php",
             "src/tail.php"
         ]
     },

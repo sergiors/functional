@@ -14,6 +14,11 @@ function pipe()
 {
     $ls = func_get_args();
 
+    /**
+     * @param array $ls
+     *
+     * @return mixed
+     */
     $pipe = function ($ls) {
         return array_reduce($ls, function ($carry, $fn) {
             if (is_null($carry)) {

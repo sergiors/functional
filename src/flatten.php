@@ -5,12 +5,17 @@ namespace Sergiors\Functional;
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param array $ls
- *
  * @return mixed
  */
-function flatten($ls)
+function flatten()
 {
+    $args = func_get_args();
+
+    /**
+     * @param array $ls
+     *
+     * @return array
+     */
     $flatten = function ($ls) {
         return array_reduce($ls, function ($carry, $curr) {
             if (is_array($curr)) {
@@ -22,5 +27,5 @@ function flatten($ls)
         }, []);
     };
 
-    return call_user_func(curry($flatten), $ls);
+    return call_user_func_array(curry($flatten), $args);
 }

@@ -11,19 +11,25 @@ function each()
 {
     $args = func_get_args();
 
+    /**
+     * @param \Closure $fn
+     * @param array    $ls
+     *
+     * @return array
+     */
     $every = function ($fn, $ls) {
         $keys = array_keys($ls);
         $count = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
-        return array_reduce($keys, function ($carry, $idx) use ($fn, $ls, $count) {
-            $args = $ls[$idx];
+        return array_reduce($keys, function ($carry, $key) use ($fn, $ls, $count) {
+            $args = $ls[$key];
 
             if ($count > 1) {
-                $carry[$idx] = call_user_func_array($fn, [$idx, $args]);
+                $carry[$key] = call_user_func_array($fn, [$key, $args]);
                 return $carry;
             }
 
-            $carry[$idx] = $fn($args);
+            $carry[$key] = call_user_func($fn, $args);
             return $carry;
         }, []);
     };
