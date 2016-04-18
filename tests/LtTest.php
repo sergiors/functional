@@ -9,7 +9,7 @@ class LtTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function gt()
+    public function lt()
     {
         $a = lt(10);
         $this->assertTrue($a(11));
