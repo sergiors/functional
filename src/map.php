@@ -3,7 +3,7 @@
 namespace Sergiors\Functional;
 
 /**
- * Just an alias
+ * Just an alias.
  *
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
@@ -12,5 +12,6 @@ namespace Sergiors\Functional;
 function map()
 {
     $args = func_get_args();
+
     return call_user_func_array(curry('array_map'), $args);
 }

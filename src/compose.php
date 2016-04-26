@@ -13,5 +13,6 @@ namespace Sergiors\Functional;
 function compose()
 {
     $args = func_get_args();
+
     return call_user_func_array(__NAMESPACE__.'\pipe', array_reverse($args));
 }

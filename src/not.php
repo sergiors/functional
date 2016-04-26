@@ -2,7 +2,6 @@
 
 namespace Sergiors\Functional;
 
-
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
@@ -12,11 +11,6 @@ function not()
 {
     $args = func_get_args();
 
-    /**
-     * @param mixed $val
-     *
-     * @return bool
-     */
     $not = function ($val) {
         return !$val;
     };

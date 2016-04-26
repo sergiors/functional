@@ -11,12 +11,6 @@ function equals()
 {
     $args = func_get_args();
 
-    /**
-     * @param mixed $a
-     * @param mixed $b
-     *
-     * @return bool
-     */
     $equals = function ($a, $b) {
         return $a === $b;
     };

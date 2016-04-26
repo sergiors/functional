@@ -9,7 +9,7 @@ namespace Sergiors\Functional;
  *
  * @return array
  */
-function head($ls)
+function head(array $ls)
 {
     return array_shift($ls);
 }

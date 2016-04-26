@@ -3,7 +3,7 @@
 namespace Sergiors\Functional;
 
 /**
- * Almost an alias
+ * Almost an alias.
  *
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
@@ -13,13 +13,7 @@ function filter()
 {
     $args = func_get_args();
 
-    /**
-     * @param \Closure $fn
-     * @param array    $ls
-     *
-     * @return array
-     */
-    $filter = function ($fn, $ls) {
+    $filter = function (\Closure $fn, array $ls) {
         return array_filter($ls, $fn);
     };
 

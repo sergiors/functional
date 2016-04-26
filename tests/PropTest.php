@@ -15,8 +15,7 @@ class PropTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('Jack', $name(['name' => 'Jack']));
         $this->assertFalse($name([]));
-        
+
         $this->assertEquals('Jack', prop('name', ['name' => 'Jack']));
     }
-
 }

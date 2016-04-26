@@ -14,12 +14,7 @@ function pipe()
 {
     $ls = func_get_args();
 
-    /**
-     * @param array $ls
-     *
-     * @return mixed
-     */
-    $pipe = function ($ls) {
+    $pipe = function (array $ls) {
         return array_reduce($ls, function ($carry, $fn) {
             if (is_null($carry)) {
                 return $fn;
@@ -27,6 +22,7 @@ function pipe()
 
             return function () use ($carry, $fn) {
                 $args = func_get_args();
+
                 return $fn(call_user_func_array($carry, $args));
             };
         });

@@ -22,7 +22,7 @@ class Collection
      *
      * @return Collection
      */
-    public function filter($fn)
+    public function filter(\Closure $fn)
     {
         return new self(filter($fn, $this->ls));
     }
@@ -32,7 +32,7 @@ class Collection
      *
      * @return Collection
      */
-    public function map($fn)
+    public function map(\Closure $fn)
     {
         return new self(map($fn, $this->ls));
     }
@@ -42,7 +42,7 @@ class Collection
      *
      * @return mixed
      */
-    public function reduce($fn)
+    public function reduce(\Closure $fn)
     {
         return reduce($fn, $this->ls);
     }

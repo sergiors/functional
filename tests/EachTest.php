@@ -21,20 +21,21 @@ class EachTest extends \PHPUnit_Framework_TestCase
             }
 
             $options['dsn'] = null;
+
             return $options;
         });
 
         $expected = [
             'db1' => [
-                'dsn' => ''
+                'dsn' => '',
             ],
             'db2' => [
                 'options' => [],
-                'dsn' => null
+                'dsn' => null,
             ],
             'db3' => [
-                'dsn' => null
-            ]
+                'dsn' => null,
+            ],
         ];
 
         $this->assertEquals($expected, $actual($dbs));
@@ -53,15 +54,15 @@ class EachTest extends \PHPUnit_Framework_TestCase
 
             return $options;
         });
-        
+
         $expected = [
             'db1' => [
-                'dsn' => ''
+                'dsn' => '',
             ],
             'db2' => [
-                'options' => []
+                'options' => [],
             ],
-            'db3' => null
+            'db3' => null,
         ];
 
         $this->assertEquals($expected, $actual($dbs));
@@ -71,12 +72,12 @@ class EachTest extends \PHPUnit_Framework_TestCase
     {
         $dbs = [
             'db1' => [
-                'dsn' => ''
+                'dsn' => '',
             ],
             'db2' => [
-                'options' => []
+                'options' => [],
             ],
-            'db3' => []
+            'db3' => [],
         ];
 
         return [[$dbs]];

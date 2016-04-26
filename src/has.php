@@ -11,12 +11,6 @@ function has()
 {
     $args = func_get_args();
 
-    /**
-     * @param string $prop
-     * @param array  $ls
-     *
-     * @return bool
-     */
     $has = function ($prop, $ls) {
         if (is_object($ls)) {
             $ls = (array) $ls;

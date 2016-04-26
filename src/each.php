@@ -11,13 +11,7 @@ function each()
 {
     $args = func_get_args();
 
-    /**
-     * @param \Closure $fn
-     * @param array    $ls
-     *
-     * @return array
-     */
-    $every = function ($fn, $ls) {
+    $every = function (\Closure $fn, array $ls) {
         $keys = array_keys($ls);
         $count = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
@@ -26,10 +20,12 @@ function each()
 
             if ($count > 1) {
                 $carry[$key] = call_user_func_array($fn, [$key, $args]);
+
                 return $carry;
             }
 
             $carry[$key] = call_user_func($fn, $args);
+
             return $carry;
         }, []);
     };

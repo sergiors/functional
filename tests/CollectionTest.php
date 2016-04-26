@@ -15,7 +15,7 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
             'PushEvent' => 5,
             'CreateEvent' => 4,
             'IssuesEvent' => 3,
-            'CommitCommentEvent' => 2
+            'CommitCommentEvent' => 2,
         ]);
 
         $x = $scores->filter(function ($a) {

@@ -19,6 +19,7 @@ function curry($fn)
 
         if ($count > count($args)) {
             array_unshift($args, $fn);
+
             return call_user_func_array(__NAMESPACE__.'\curry', $args);
         }
 

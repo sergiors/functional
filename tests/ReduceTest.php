@@ -14,35 +14,35 @@ class ReduceTest extends \PHPUnit_Framework_TestCase
         $musicians = [
             [
                 'name' => 'James',
-                'band_name' => 'Metallica'
+                'band_name' => 'Metallica',
             ],
             [
                 'name' => 'Kirk',
-                'band_name' => 'Metallica'
+                'band_name' => 'Metallica',
             ],
             [
                 'name' => 'Ozzy',
-                'band_name' => 'Black Sabbath'
+                'band_name' => 'Black Sabbath',
             ],
             [
                 'name' => 'Tony Iommi',
-                'band_name' => 'Black Sabbath'
+                'band_name' => 'Black Sabbath',
             ],
             [
                 'name' => 'Buck Dharma',
-                'band_name' => 'Blue Oyster Cult'
-            ]
+                'band_name' => 'Blue Oyster Cult',
+            ],
         ];
 
         $expected = [
             [
                 'name' => 'James',
-                'band_name' => 'Metallica'
+                'band_name' => 'Metallica',
             ],
             [
                 'name' => 'Kirk',
-                'band_name' => 'Metallica'
-            ]
+                'band_name' => 'Metallica',
+            ],
         ];
 
         $metallica = reduce(function ($acc, $musician) {

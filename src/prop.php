@@ -11,12 +11,6 @@ function prop()
 {
     $args = func_get_args();
 
-    /**
-     * @param string $prop
-     * @param array  $ls
-     *
-     * @return bool
-     */
     $prop = function ($prop, $ls) {
         if (has($prop, $ls)) {
             return $ls[$prop];

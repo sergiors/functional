@@ -46,7 +46,7 @@ class CurryTest extends \PHPUnit_Framework_TestCase
         $x = curry(function ($a, $b, $c) {
             return $a($b($c));
         });
-        
+
         $y = $x(function ($x) {
             return $x + 1;
         });
