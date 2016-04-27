@@ -24,7 +24,7 @@ $addFourNumbers = funciton ($a, $b, $c, $d) {
     return $a + $b + $c + $d;
 }
 
-$curriedAddFourNumbers = curry(addFourNumbers);
+$curriedAddFourNumbers = curry($addFourNumbers);
 $f = $curriedAddFourNumbers(1, 2);
 $g = $f(3);
 $g(4); // 10
