@@ -12,12 +12,12 @@ namespace Sergiors\Functional;
 function curry($fn)
 {
     $args = tail(func_get_args());
-    $count = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
+    $params = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
-    return function () use ($fn, $args, $count) {
+    return function () use ($fn, $args, $params) {
         $args = array_merge($args, func_get_args());
 
-        if ($count > count($args)) {
+        if ($params > count($args)) {
             array_unshift($args, $fn);
 
             return call_user_func_array(__NAMESPACE__.'\curry', $args);

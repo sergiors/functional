@@ -14,59 +14,13 @@ class EachTest extends \PHPUnit_Framework_TestCase
      */
     public function each($dbs)
     {
-        $actual = each(function ($options) {
-            $hasdsn = has('dsn');
-            if ($hasdsn($options)) {
-                return $options;
-            }
-
-            $options['dsn'] = null;
-
-            return $options;
+        $actual = each(function ($k, $v) use ($dbs) {
+            $this->assertEquals($v, $dbs[$k]);
         });
 
-        $expected = [
-            'db1' => [
-                'dsn' => '',
-            ],
-            'db2' => [
-                'options' => [],
-                'dsn' => null,
-            ],
-            'db3' => [
-                'dsn' => null,
-            ],
-        ];
-
-        $this->assertEquals($expected, $actual($dbs));
+        $this->assertEquals($dbs, $actual($dbs));
     }
 
-    /**
-     * @test
-     * @dataProvider data
-     */
-    public function eachWithKeyParam($dbs)
-    {
-        $actual = each(function ($key, $options) {
-            if (equals($key, 'db3')) {
-                $options = null;
-            }
-
-            return $options;
-        });
-
-        $expected = [
-            'db1' => [
-                'dsn' => '',
-            ],
-            'db2' => [
-                'options' => [],
-            ],
-            'db3' => null,
-        ];
-
-        $this->assertEquals($expected, $actual($dbs));
-    }
 
     public function data()
     {

@@ -13,21 +13,21 @@ function each()
 
     $every = function (\Closure $fn, array $ls) {
         $keys = array_keys($ls);
-        $count = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
+        $params = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
-        return array_reduce($keys, function ($carry, $key) use ($fn, $ls, $count) {
-            $args = $ls[$key];
+        return array_reduce($keys, function (array $carry, $key) use ($fn, $params) {
+            $args = [
+                $carry[$key]
+            ];
 
-            if ($count > 1) {
-                $carry[$key] = call_user_func_array($fn, [$key, $args]);
-
-                return $carry;
+            if ($params > 1) {
+                array_unshift($args, $key);
             }
 
-            $carry[$key] = call_user_func($fn, $args);
+            call_user_func_array($fn, $args);
 
             return $carry;
-        }, []);
+        }, $ls);
     };
 
     return call_user_func_array(curry($every), $args);
