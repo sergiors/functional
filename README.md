@@ -15,6 +15,21 @@ Install
 composer require sergiors/functional "dev-master"
 ```
 
+How to use
+----------
+```php
+use function Sergiors\Functional\curry;
+
+$addFourNumbers = funciton ($a, $b, $c, $d) {
+    return $a + $b + $c + $d;
+}
+
+$curriedAddFourNumbers = curry(addFourNumbers);
+$f = $curriedAddFourNumbers(1, 2);
+$g = $f(3);
+$g(4); // 10
+```
+
 API
 ---
 
