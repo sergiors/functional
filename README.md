@@ -15,6 +15,31 @@ Install
 composer require sergiors/functional "dev-master"
 ```
 
+API
+---
+
+Like [Ramda](http://ramdajs.com/) , functions are automatically curried
+
+```
+compose()
+curry()
+each()
+equals()
+filter()
+flatten()
+gt()
+has()
+head()
+lt()
+map()
+not()
+pipe()
+prop()
+reduce()
+tail()
+```
+
 License
 -------
 MIT
+
