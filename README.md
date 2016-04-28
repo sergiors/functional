@@ -30,12 +30,30 @@ $g = $f(3);
 $g(4); // 10
 ```
 
+You can wrap an array with `Sergiors\Functional\Collection` to use fluent interface.
+
+```php
+use function Sergiors\Functional\Collection;
+
+$ls1 = new Collection([1, 2, 3, 4, 5, 6]);
+
+$ls2 = $ls1->filter(function ($x) {
+    return $x > 2;
+})->map(function ($x) {
+    return $x + 1;
+});
+
+print_r($ls1); // [1, 2, 3, 4, 5, 6]
+print_r($ls2); // [4, 5, 6, 7]
+```
+
 API
 ---
 
 Like [Ramda](http://ramdajs.com/) , functions are automatically curried
 
 ```
+append()
 compose()
 curry()
 each()
@@ -50,6 +68,7 @@ map()
 not()
 pipe()
 prop()
+prepend()
 reduce()
 tail()
 ```

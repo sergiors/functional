@@ -11,21 +11,70 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
      */
     public function fluent()
     {
-        $scores = new Collection([
+        $arr = [
             'PushEvent' => 5,
             'CreateEvent' => 4,
             'IssuesEvent' => 3,
             'CommitCommentEvent' => 2,
-        ]);
+        ];
+
+        $scores = new Collection($arr);
 
         $x = $scores->filter(function ($a) {
             return $a >= 4;
         })->map(function ($a) {
             return $a + 1;
+        })->each(function ($key, $val) use ($scores) {
+            $this->assertEquals($scores[$key] + 1, $val);
         })->reduce(function ($res, $a) {
             return $res + $a;
         }, 0);
 
         $this->assertEquals(11, $x);
+        $this->assertEquals($arr, $scores->toArray());
+    }
+
+    /**
+     * @test
+     */
+    public function shouldReturnDiffObjects()
+    {
+        $ls = new Collection([1, 2, 3, 4, 6]);
+
+        $ls2 = $ls->prepend('James');
+        $this->assertNotSame($ls, $ls2);
+
+        $ls3 = $ls2->append('Jack');
+        $this->assertNotSame($ls2, $ls3);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldChangeArray()
+    {
+        $collection = new Collection(['name' => 'Jimi']);
+
+        $this->assertTrue(isset($collection['name']));
+
+        $collection['lastname'] = 'Hendrix';
+
+        $this->assertTrue(isset($collection['lastname']));
+
+        $collection[] = 'just value';
+        $this->assertEquals(3, $collection->count());
+
+        unset($collection[0]);
+        unset($collection['tests']);
+        $this->assertEquals(2, $collection->count());
+    }
+
+    /**
+     * @test
+     */
+    public function shouldReturnArrayIterator()
+    {
+        $collection = new Collection([1, 2, 3]);
+        $this->assertInstanceOf(\ArrayIterator::class, $collection->getIterator());
     }
 }

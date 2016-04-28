@@ -26,6 +26,7 @@
             "Sergiors\\Functional\\": "src"
         },
         "files": [
+            "src/append.php",
             "src/compose.php",
             "src/curry.php",
             "src/each.php",
@@ -39,6 +40,7 @@
             "src/map.php",
             "src/not.php",
             "src/pipe.php",
+            "src/prepend.php",
             "src/prop.php",
             "src/reduce.php",
             "src/tail.php"
