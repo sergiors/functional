@@ -6,7 +6,7 @@ Functional
 
 Motivation
 ----------
-I did create this project to explore **Functional Programming**.
+I did create this project to explore **Functional Programming**.  
 **This project doesn't use any loop!**
 
 Install

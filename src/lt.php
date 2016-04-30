@@ -11,8 +11,8 @@ function lt()
 {
     $args = func_get_args();
 
-    $gt = function ($a, $b) {
-        return $a < $b;
+    $gt = function ($x, $y) {
+        return $x < $y;
     };
 
     return call_user_func_array(curry($gt), $args);
