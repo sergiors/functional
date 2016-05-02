@@ -14,8 +14,8 @@ class EachTest extends \PHPUnit_Framework_TestCase
      */
     public function each($dbs)
     {
-        $actual = each(function ($k, $v) use ($dbs) {
-            $this->assertEquals($v, $dbs[$k]);
+        $actual = each(function ($val, $key) use ($dbs) {
+            $this->assertEquals($val, $dbs[$key]);
         });
 
         $this->assertEquals($dbs, $actual($dbs));

@@ -24,7 +24,7 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
             return $a >= 4;
         })->map(function ($a) {
             return $a + 1;
-        })->each(function ($key, $val) use ($scores) {
+        })->each(function ($val, $key) use ($scores) {
             $this->assertEquals($scores[$key] + 1, $val);
         })->reduce(function ($res, $a) {
             return $res + $a;

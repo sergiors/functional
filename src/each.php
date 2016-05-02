@@ -11,21 +11,10 @@ function each()
 {
     $args = func_get_args();
 
-    $every = function (\Closure $fn, array $ls) {
-        $params = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
-
-        return array_map(function ($val) use ($fn, $ls, $params) {
-            $args = [$val];
-
-            if ($params > 1) {
-                array_unshift($args, array_search($val, $ls));
-            }
-
-            call_user_func_array($fn, $args);
-
-            return $val;
-        }, $ls);
+    $each = function (\Closure $fn, array $ls) {
+        array_walk($ls, $fn);
+        return $ls;
     };
 
-    return call_user_func_array(curry($every), $args);
+    return call_user_func_array(curry($each), $args);
 }
