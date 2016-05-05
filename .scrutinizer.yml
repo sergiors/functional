@@ -5,7 +5,7 @@ build:
         redis: false
         rabbitmq: false
         php:
-            version: 5.6
+            version: 5.5
 
     tests:
         override:
