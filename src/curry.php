@@ -11,7 +11,7 @@ namespace Sergiors\Functional;
  */
 function curry($fn)
 {
-    $args = tail(func_get_args());
+    $args = array_slice(func_get_args(), 1);
     $params = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
     return function () use ($fn, $args, $params) {

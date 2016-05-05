@@ -16,7 +16,7 @@ function pipe()
 
     $pipe = function (array $ls) {
         return array_reduce($ls, function ($carry, $fn) {
-            if (is_null($carry)) {
+            if (null === $carry) {
                 return $fn;
             }
 

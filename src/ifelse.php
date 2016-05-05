@@ -11,13 +11,13 @@ function ifelse()
 {
     $args = func_get_args();
 
-    $ifelse = function ($condition, $onTrue, $onFalse) {
-        return function ($args) use ($condition, $onTrue, $onFalse) {
+    $ifelse = function ($condition, $ontrue, $onfalse) {
+        return function ($args) use ($condition, $ontrue, $onfalse) {
             if (call_user_func($condition, $args)) {
-                return call_user_func($onTrue, $args);
+                return call_user_func($ontrue, $args);
             }
 
-            return call_user_func($onFalse, $args);
+            return call_user_func($onfalse, $args);
         };
     };
 

@@ -44,7 +44,7 @@ $ls2 = $ls1->filter(function ($x) {
     return $x + 1;
 });
 
-print_r($ls1); // [1, 2, 3, 4, 5, 6]
+print_r($ls1->toArray()); // [1, 2, 3, 4, 5, 6]
 print_r($ls2); // [4, 5, 6, 7]
 ```
 
@@ -88,6 +88,7 @@ Collection::count()
 Collection::getIterator()
 Collection::toArray()
 ```
+
 License
 -------
 MIT
