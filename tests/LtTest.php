@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\lt;
+use Sergiors\Functional as F;
 
 class LtTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,9 +11,9 @@ class LtTest extends \PHPUnit_Framework_TestCase
      */
     public function lt()
     {
-        $a = lt(10);
+        $a = F\lt(10);
         $this->assertTrue($a(11));
         $this->assertFalse($a(9));
-        $this->assertTrue(lt(5, 10));
+        $this->assertTrue(F\lt(5, 10));
     }
 }

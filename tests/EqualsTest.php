@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\equals;
+use Sergiors\Functional as F;
 
 class EqualsTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,9 +11,9 @@ class EqualsTest extends \PHPUnit_Framework_TestCase
      */
     public function equals()
     {
-        $bool = equals(true);
+        $bool = F\equals(true);
         $this->assertTrue($bool(true));
-        $this->assertTrue(equals(1, 1));
-        $this->assertTrue(equals([1], [1]));
+        $this->assertTrue(F\equals(1, 1));
+        $this->assertTrue(F\equals([1], [1]));
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\pipe;
+use Sergiors\Functional as F;
 
 class PipeTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class PipeTest extends \PHPUnit_Framework_TestCase
      */
     public function pipe()
     {
-        $f1 = pipe(
+        $f1 = F\pipe(
             function ($x) {
                 return $x + 2;
             },
@@ -19,9 +19,9 @@ class PipeTest extends \PHPUnit_Framework_TestCase
                 return $y * 4;
             }
         );
-        $this->assertEquals(48, $f1(10));
+        $this->assertEquals($f1(10), 48);
 
-        $f2 = pipe(
+        $f2 = F\pipe(
             function ($x, $y) {
                 return $x * $y;
             },
@@ -29,9 +29,9 @@ class PipeTest extends \PHPUnit_Framework_TestCase
                 return $x / 2;
             }
         );
-        $this->assertEquals(50, $f2(10, 10));
+        $this->assertEquals($f2(10, 10), 50);
 
-        $f3 = pipe(
+        $f3 = F\pipe(
             function ($x) {
                 return "foo($x)";
             },
@@ -42,9 +42,9 @@ class PipeTest extends \PHPUnit_Framework_TestCase
                 return "baz($x)";
             }
         );
-        $this->assertSame('baz(bar(foo(x)))', $f3('x'));
+        $this->assertSame($f3('x'), 'baz(bar(foo(x)))');
 
-        $f4 = pipe('deg2rad', 'cos');
-        $this->assertEquals(cos(deg2rad(360)), $f4(360));
+        $f4 = F\pipe('deg2rad', 'cos');
+        $this->assertEquals($f4(360), cos(deg2rad(360)));
     }
 }

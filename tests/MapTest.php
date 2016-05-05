@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\map;
+use Sergiors\Functional as F;
 
 class MapTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,8 +19,8 @@ class MapTest extends \PHPUnit_Framework_TestCase
             return $x + 2;
         };
 
-        $y = map($inc);
-        $this->assertEquals([2, 3, 4, 5, 6, 7, 8, 9, 10], $y([1, 2, 3, 4, 5, 6, 7, 8, 9]));
-        $this->assertEquals([3, 4, 5, 6, 7, 8, 9, 10, 11], map($plus2, [1, 2, 3, 4, 5, 6, 7, 8, 9]));
+        $y = F\map($inc);
+        $this->assertEquals($y([1, 2, 3, 4, 5, 6, 7, 8, 9]), [2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        $this->assertEquals(F\map($plus2, [1, 2, 3, 4, 5, 6, 7, 8, 9]), [3, 4, 5, 6, 7, 8, 9, 10, 11]);
     }
 }

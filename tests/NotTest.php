@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\not;
+use Sergiors\Functional as F;
 
 class NotTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class NotTest extends \PHPUnit_Framework_TestCase
      */
     public function not()
     {
-        $this->assertFalse(not(true));
-        $this->assertTrue(not(false));
+        $this->assertFalse(F\not(true));
+        $this->assertTrue(F\not(false));
     }
 }

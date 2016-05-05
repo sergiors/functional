@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\reduce;
+use Sergiors\Functional as F;
 
 class ReduceTest extends \PHPUnit_Framework_TestCase
 {
@@ -45,7 +45,7 @@ class ReduceTest extends \PHPUnit_Framework_TestCase
             ],
         ];
 
-        $metallica = reduce(function ($acc, $musician) {
+        $metallica = F\reduce(function ($acc, $musician) {
             if ($musician['band_name'] === 'Metallica') {
                 $acc[] = $musician;
             }
@@ -53,6 +53,6 @@ class ReduceTest extends \PHPUnit_Framework_TestCase
             return $acc;
         }, $musicians);
 
-        $this->assertEquals($expected, $metallica);
+        $this->assertEquals($metallica, $expected);
     }
 }

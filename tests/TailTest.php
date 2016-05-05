@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\tail;
+use Sergiors\Functional as F;
 
 class TailTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class TailTest extends \PHPUnit_Framework_TestCase
      */
     public function tail()
     {
-        $this->assertEquals([2, 3, 4], tail([1, 2, 3, 4]));
-        $this->assertEquals(['b', 'c', 'd'], tail(['a', 'b', 'c', 'd']));
+        $this->assertEquals(F\tail([1, 2, 3, 4]), [2, 3, 4]);
+        $this->assertEquals(F\tail(['a', 'b', 'c', 'd']), ['b', 'c', 'd']);
     }
 }

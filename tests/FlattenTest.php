@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\flatten;
+use Sergiors\Functional as F;
 
 class FlattenTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class FlattenTest extends \PHPUnit_Framework_TestCase
      */
     public function flatten()
     {
-        $this->assertEquals([1, 2, 3, 4, 5, 6], flatten([1, [2, 3], [4, [5, [6]]]]));
-        $this->assertEquals([1, 1.1, 2, 3, 4, 5], flatten([[[1, [1.1]], 2, 3], [4, 5]]));
+        $this->assertEquals(F\flatten([1, [2, 3], [4, [5, [6]]]]), [1, 2, 3, 4, 5, 6]);
+        $this->assertEquals(F\flatten([[[1, [1.1]], 2, 3], [4, 5]]), [1, 1.1, 2, 3, 4, 5]);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\head;
+use Sergiors\Functional as F;
 
 class HeadTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class HeadTest extends \PHPUnit_Framework_TestCase
      */
     public function head()
     {
-        $this->assertEquals(1, head([1, 2, 3, 4]));
-        $this->assertEquals('a', head(['a', 'b', 'c', 'd']));
+        $this->assertEquals(F\head([1, 2, 3, 4]), 1);
+        $this->assertEquals(F\head(['a', 'b', 'c', 'd']), 'a');
     }
 }

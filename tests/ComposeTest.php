@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\compose;
+use Sergiors\Functional as F;
 
 class ComposeTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class ComposeTest extends \PHPUnit_Framework_TestCase
      */
     public function compose()
     {
-        $f1 = compose(
+        $f1 = F\compose(
             function ($x) {
                 return "foo($x)";
             },
@@ -22,9 +22,9 @@ class ComposeTest extends \PHPUnit_Framework_TestCase
                 return "baz($x)";
             }
         );
-        $this->assertSame('foo(bar(baz(x)))', $f1('x'));
+        $this->assertSame($f1('x'), 'foo(bar(baz(x)))');
 
-        $f2 = compose('cos', 'deg2rad');
-        $this->assertEquals(cos(deg2rad(360)), $f2(360));
+        $f2 = F\compose('cos', 'deg2rad');
+        $this->assertEquals($f2(360), cos(deg2rad(360)));
     }
 }

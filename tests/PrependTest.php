@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\prepend;
+use Sergiors\Functional as F;
 
 class PrependTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,6 +11,6 @@ class PrependTest extends \PHPUnit_Framework_TestCase
      */
     public function prepend()
     {
-        $this->assertEquals(['fee', 'fi', 'fo', 'fum'], prepend('fee', ['fi', 'fo', 'fum']));
+        $this->assertEquals(F\prepend('fee', ['fi', 'fo', 'fum']), ['fee', 'fi', 'fo', 'fum']);
     }
 }

@@ -10,10 +10,10 @@
         }
     ],
     "require": {
-        "php": "^5.6|^7.0"
+        "php": "^5.5|^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.2",
+        "phpunit/phpunit": "^4.8",
         "pdepend/pdepend": "~2.0",
         "phing/phing": "~2.10",
         "phploc/phploc": "~2.1",
@@ -26,6 +26,7 @@
             "Sergiors\\Functional\\": "src"
         },
         "files": [
+            "src/always.php",
             "src/append.php",
             "src/compose.php",
             "src/curry.php",
@@ -36,6 +37,7 @@
             "src/gt.php",
             "src/has.php",
             "src/head.php",
+            "src/ifelse.php",
             "src/lt.php",
             "src/map.php",
             "src/not.php",

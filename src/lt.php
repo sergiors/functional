@@ -11,11 +11,11 @@ function lt()
 {
     $args = func_get_args();
 
-    $gt = function ($x, $y) {
-        return $x < $y;
+    $lt = function ($a, $b) {
+        return $a < $b;
     };
 
-    return call_user_func_array(curry($gt), $args);
+    return call_user_func_array(curry($lt), $args);
 }
 
 /**

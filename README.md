@@ -19,13 +19,13 @@ composer require sergiors/functional "dev-master"
 How to use
 ----------
 ```php
-use function Sergiors\Functional\curry;
+use Sergiors\Functional as F;
 
 $addFourNumbers = funciton ($a, $b, $c, $d) {
     return $a + $b + $c + $d;
 }
 
-$curriedAddFourNumbers = curry($addFourNumbers);
+$curriedAddFourNumbers = F\curry($addFourNumbers);
 $f = $curriedAddFourNumbers(1, 2);
 $g = $f(3);
 $g(4); // 10
@@ -34,7 +34,7 @@ $g(4); // 10
 You can wrap an array with `Sergiors\Functional\Collection` to use fluent interface.
 
 ```php
-use function Sergiors\Functional\Collection;
+use Sergiors\Functional\Collection;
 
 $ls1 = new Collection([1, 2, 3, 4, 5, 6]);
 
@@ -54,6 +54,7 @@ API
 Like [Ramda](http://ramdajs.com/) , functions are automatically curried
 
 ```
+always()
 append()
 compose()
 curry()
@@ -64,6 +65,7 @@ flatten()
 gt()
 has()
 head()
+ifelse()
 lt()
 map()
 not()
@@ -74,6 +76,18 @@ reduce()
 tail()
 ```
 
+
+```
+Collection::filter()
+Collection::map()
+Collection::each()
+Collection::reduce()
+Collection::prepend()
+Collection::append()
+Collection::count()
+Collection::getIterator()
+Collection::toArray()
+```
 License
 -------
 MIT

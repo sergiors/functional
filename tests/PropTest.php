@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\prop;
+use Sergiors\Functional as F;
 
 class PropTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,11 +11,11 @@ class PropTest extends \PHPUnit_Framework_TestCase
      */
     public function has()
     {
-        $name = prop('name');
+        $name = F\prop('name');
 
-        $this->assertEquals('Jack', $name(['name' => 'Jack']));
+        $this->assertEquals($name(['name' => 'Jack']), 'Jack');
         $this->assertFalse($name([]));
 
-        $this->assertEquals('Jack', prop('name', ['name' => 'Jack']));
+        $this->assertEquals(F\prop('name', ['name' => 'Jack']), 'Jack');
     }
 }

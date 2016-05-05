@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\has;
+use Sergiors\Functional as F;
 
 class HasTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class HasTest extends \PHPUnit_Framework_TestCase
      */
     public function has()
     {
-        $hasName = has('name');
+        $hasName = F\has('name');
 
         $this->assertTrue($hasName(['name' => 'Jack']));
         $this->assertFalse($hasName([]));
@@ -22,7 +22,7 @@ class HasTest extends \PHPUnit_Framework_TestCase
      */
     public function withObject()
     {
-        $hasName = has('name');
+        $hasName = F\has('name');
 
         $user = new \stdClass();
         $user->name = 'Jack';

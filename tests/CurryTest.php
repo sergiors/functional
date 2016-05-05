@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\curry;
+use Sergiors\Functional as F;
 
 class CurryTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class CurryTest extends \PHPUnit_Framework_TestCase
      */
     public function curry()
     {
-        $greeter = curry(function ($greeting, $separator, $emphasis, $name) {
+        $greeter = F\curry(function ($greeting, $separator, $emphasis, $name) {
             return $greeting.$separator.$name.$emphasis;
         });
 
@@ -19,7 +19,7 @@ class CurryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Hello, Jack.', $hello('Jack'));
         $this->assertEquals('Hello, James.', $hello('James'));
 
-        $addFourNumbers = curry(function ($x, $y, $z, $xx) {
+        $addFourNumbers = F\curry(function ($x, $y, $z, $xx) {
             return $x + $y + $z + $xx;
         });
 
@@ -33,7 +33,7 @@ class CurryTest extends \PHPUnit_Framework_TestCase
      */
     public function deepCurry()
     {
-        $four = curry(function ($a, $b, $c, $d) {
+        $four = F\curry(function ($a, $b, $c, $d) {
             return $a + $b + $c + $d;
         });
         $x = $four(1);
@@ -43,7 +43,7 @@ class CurryTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(10, $four(1, 2, 3, 4));
 
-        $x = curry(function ($a, $b, $c) {
+        $x = F\curry(function ($a, $b, $c) {
             return $a($b($c));
         });
 

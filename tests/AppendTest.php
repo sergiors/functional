@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\append;
+use Sergiors\Functional as F;
 
 class AppendTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,9 +11,9 @@ class AppendTest extends \PHPUnit_Framework_TestCase
      */
     public function append()
     {
-        $this->assertEquals(['write', 'more', 'tests'], append('tests', ['write', 'more']));
+        $this->assertEquals(F\append('tests', ['write', 'more']), ['write', 'more', 'tests']);
 
-        $curry = append(['tests']);
-        $this->assertEquals(['write', 'more', ['tests']], $curry(['write', 'more']));
+        $curry = F\append(['tests']);
+        $this->assertEquals($curry(['write', 'more']), ['write', 'more', ['tests']]);
     }
 }

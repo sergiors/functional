@@ -2,9 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\each;
-use function Sergiors\Functional\has;
-use function Sergiors\Functional\equals;
+use Sergiors\Functional as F;
 
 class EachTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,7 +12,7 @@ class EachTest extends \PHPUnit_Framework_TestCase
      */
     public function each($dbs)
     {
-        $actual = each(function ($val, $key) use ($dbs) {
+        $actual = F\each(function ($val, $key) use ($dbs) {
             $this->assertEquals($val, $dbs[$key]);
         });
 

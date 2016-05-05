@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional\Tests;
 
-use function Sergiors\Functional\gt;
+use Sergiors\Functional as F;
 
 class GtTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,8 +11,8 @@ class GtTest extends \PHPUnit_Framework_TestCase
      */
     public function gt()
     {
-        $a = gt(10);
+        $a = F\gt(10);
         $this->assertTrue($a(5));
-        $this->assertTrue(gt(10, 5));
+        $this->assertTrue(F\gt(10, 5));
     }
 }
