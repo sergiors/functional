@@ -9,7 +9,7 @@ class PropTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function has()
+    public function prop()
     {
         $name = F\prop('name');
 

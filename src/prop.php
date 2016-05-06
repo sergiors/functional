@@ -11,14 +11,14 @@ function prop()
 {
     $args = func_get_args();
 
-    $prop = function ($prop, $ls, $default = false) {
+    $prop = function ($prop, $ls) {
         $ls = (array) $ls;
-        
-        if (has($prop, $ls)) {
+
+        if (array_key_exists($prop, $ls)) {
             return $ls[$prop];
         }
 
-        return $default;
+        return false;
     };
 
     return call_user_func_array(curry($prop), $args);
