@@ -30,6 +30,7 @@
             "src/append.php",
             "src/compose.php",
             "src/curry.php",
+            "src/drop.php",
             "src/each.php",
             "src/equals.php",
             "src/filter.php",
