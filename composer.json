@@ -46,7 +46,8 @@
             "src/prepend.php",
             "src/prop.php",
             "src/reduce.php",
-            "src/tail.php"
+            "src/tail.php",
+            "src/take.php"
         ]
     },
     "autoload-dev": {

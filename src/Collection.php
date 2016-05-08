@@ -121,7 +121,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function offsetGet($offset)
     {
-        return prop($offset, $this->ls) ?: null;
+        return get($this->ls, $offset, null);
     }
 
     /**
