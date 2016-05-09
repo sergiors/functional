@@ -25,7 +25,7 @@ $addFourNumbers = funciton ($a, $b, $c, $d) {
     return $a + $b + $c + $d;
 }
 
-$curriedAddFourNumbers = F\curry($addFourNumbers);
+$curriedAddFourNumbers = F\partial($addFourNumbers);
 $f = $curriedAddFourNumbers(1, 2);
 $g = $f(3);
 $g(4); // 10
@@ -51,7 +51,7 @@ print_r($ls2); // [4, 5, 6, 7]
 API
 ---
 
-Like [Ramda](http://ramdajs.com/) , functions are automatically curried
+All functions are automatically applied partial application.
 
 ```
 always()
