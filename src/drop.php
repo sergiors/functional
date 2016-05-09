@@ -15,5 +15,5 @@ function drop()
         return array_slice($ls, $n);
     };
 
-    return call_user_func_array(curry($drop), $args);
+    return call_user_func_array(partial($drop), $args);
 }

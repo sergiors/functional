@@ -25,5 +25,5 @@ function get()
         return $notfound;
     };
 
-    return call_user_func_array(curry($get), $args);
+    return call_user_func_array(partial($get), $args);
 }

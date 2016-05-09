@@ -16,5 +16,5 @@ function each()
         return $ls;
     };
 
-    return call_user_func_array(curry($each), $args);
+    return call_user_func_array(partial($each), $args);
 }

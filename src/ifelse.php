@@ -21,5 +21,5 @@ function ifelse()
         };
     };
 
-    return call_user_func_array(curry($ifelse), $args);
+    return call_user_func_array(partial($ifelse), $args);
 }

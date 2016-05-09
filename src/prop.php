@@ -21,5 +21,5 @@ function prop()
         return false;
     };
 
-    return call_user_func_array(curry($prop), $args);
+    return call_user_func_array(partial($prop), $args);
 }

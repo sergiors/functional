@@ -17,5 +17,5 @@ function filter()
         return array_filter($ls, $fn);
     };
 
-    return call_user_func_array(curry($filter), $args);
+    return call_user_func_array(partial($filter), $args);
 }

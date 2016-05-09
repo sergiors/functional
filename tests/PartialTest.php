@@ -4,14 +4,14 @@ namespace Sergiors\Functional\Tests;
 
 use Sergiors\Functional as F;
 
-class CurryTest extends \PHPUnit_Framework_TestCase
+class PartialTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
      */
-    public function curry()
+    public function partial()
     {
-        $greeter = F\curry(function ($greeting, $separator, $emphasis, $name) {
+        $greeter = F\partial(function ($greeting, $separator, $emphasis, $name) {
             return $greeting.$separator.$name.$emphasis;
         });
 
@@ -19,7 +19,7 @@ class CurryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Hello, Jack.', $hello('Jack'));
         $this->assertEquals('Hello, James.', $hello('James'));
 
-        $addFourNumbers = F\curry(function ($x, $y, $z, $xx) {
+        $addFourNumbers = F\partial(function ($x, $y, $z, $xx) {
             return $x + $y + $z + $xx;
         });
 
@@ -31,9 +31,9 @@ class CurryTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function deepCurry()
+    public function deepPartial()
     {
-        $four = F\curry(function ($a, $b, $c, $d) {
+        $four = F\partial(function ($a, $b, $c, $d) {
             return $a + $b + $c + $d;
         });
         $x = $four(1);
@@ -43,7 +43,7 @@ class CurryTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(10, $four(1, 2, 3, 4));
 
-        $x = F\curry(function ($a, $b, $c) {
+        $x = F\partial(function ($a, $b, $c) {
             return $a($b($c));
         });
 

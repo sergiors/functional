@@ -15,5 +15,5 @@ function gt()
         return $a > $b;
     };
 
-    return call_user_func_array(curry($gt), $args);
+    return call_user_func_array(partial($gt), $args);
 }

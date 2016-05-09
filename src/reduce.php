@@ -17,5 +17,5 @@ function reduce()
         return array_reduce($ls, $fn, $initial);
     };
 
-    return call_user_func_array(curry($reduce), $args);
+    return call_user_func_array(partial($reduce), $args);
 }

@@ -16,5 +16,5 @@ function append()
         return $ls;
     };
 
-    return call_user_func_array(curry($append), $args);
+    return call_user_func_array(partial($append), $args);
 }

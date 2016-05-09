@@ -14,5 +14,5 @@ function prepend()
         return $ls;
     };
 
-    return call_user_func_array(curry($prepend), $args);
+    return call_user_func_array(partial($prepend), $args);
 }

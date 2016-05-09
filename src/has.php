@@ -15,5 +15,5 @@ function has()
         return array_key_exists($prop, (array) $ls);
     };
 
-    return call_user_func_array(curry($has), $args);
+    return call_user_func_array(partial($has), $args);
 }

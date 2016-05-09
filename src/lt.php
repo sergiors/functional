@@ -15,5 +15,5 @@ function lt()
         return $a < $b;
     };
 
-    return call_user_func_array(curry($lt), $args);
+    return call_user_func_array(partial($lt), $args);
 }

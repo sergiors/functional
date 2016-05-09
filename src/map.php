@@ -13,5 +13,5 @@ function map()
 {
     $args = func_get_args();
 
-    return call_user_func_array(curry('array_map'), $args);
+    return call_user_func_array(partial('array_map'), $args);
 }

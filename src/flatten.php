@@ -23,5 +23,5 @@ function flatten()
         }, []);
     };
 
-    return call_user_func_array(curry($flatten), $args);
+    return call_user_func_array(partial($flatten), $args);
 }

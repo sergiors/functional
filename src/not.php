@@ -15,5 +15,5 @@ function not()
         return !$val;
     };
 
-    return call_user_func_array(curry($not), $args);
+    return call_user_func_array(partial($not), $args);
 }

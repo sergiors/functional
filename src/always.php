@@ -17,5 +17,5 @@ function always()
         };
     };
 
-    return call_user_func_array(curry($always), $args);
+    return call_user_func_array(partial($always), $args);
 }

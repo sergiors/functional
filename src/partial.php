@@ -9,7 +9,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function curry($fn)
+function partial($fn)
 {
     $args = array_slice(func_get_args(), 1);
     $params = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
@@ -20,7 +20,7 @@ function curry($fn)
         if ($params > count($args)) {
             array_unshift($args, $fn);
 
-            return call_user_func_array(__NAMESPACE__.'\curry', $args);
+            return call_user_func_array(__NAMESPACE__.'\partial', $args);
         }
 
         return call_user_func_array($fn, $args);

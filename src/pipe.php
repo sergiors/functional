@@ -28,5 +28,5 @@ function pipe()
         });
     };
 
-    return call_user_func(curry($pipe), $ls);
+    return call_user_func(partial($pipe), $ls);
 }

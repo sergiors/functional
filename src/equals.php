@@ -15,5 +15,5 @@ function equals()
         return $a === $b;
     };
 
-    return call_user_func_array(curry($equals), $args);
+    return call_user_func_array(partial($equals), $args);
 }

@@ -15,5 +15,5 @@ function take()
         return array_slice($ls, 0, $n);
     };
 
-    return call_user_func_array(curry($take), $args);
+    return call_user_func_array(partial($take), $args);
 }
