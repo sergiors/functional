@@ -25,8 +25,8 @@ $addFourNumbers = funciton ($a, $b, $c, $d) {
     return $a + $b + $c + $d;
 }
 
-$curriedAddFourNumbers = F\partial($addFourNumbers);
-$f = $curriedAddFourNumbers(1, 2);
+$partialAddFourNumbers = F\partial($addFourNumbers);
+$f = $partialAddFourNumbers(1, 2);
 $g = $f(3);
 $g(4); // 10
 ```

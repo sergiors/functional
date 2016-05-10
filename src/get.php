@@ -3,7 +3,7 @@
 namespace Sergiors\Functional;
 
 /**
- * Returns the value mapped to key, notfound or false if key not present.
+ * Returns the value mapped to key, $notfound value if key not present.
  *
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
@@ -18,7 +18,7 @@ function get()
     $get = function ($map, $key, $notfound = false) {
         $map = (array) $map;
         
-        if (array_key_exists($key, $map)) {
+        if (isset($map[$key])) {
             return $map[$key];
         }
 

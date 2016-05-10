@@ -19,8 +19,8 @@ class PartialTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Hello, Jack.', $hello('Jack'));
         $this->assertEquals('Hello, James.', $hello('James'));
 
-        $addFourNumbers = F\partial(function ($x, $y, $z, $xx) {
-            return $x + $y + $z + $xx;
+        $addFourNumbers = F\partial(function ($a, $b, $c, $d) {
+            return $a + $b + $c + $d;
         });
 
         $f = $addFourNumbers(1, 2);
