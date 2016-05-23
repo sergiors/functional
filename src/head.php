@@ -18,7 +18,7 @@ function head($ls)
         return false;
     }
 
-    if (is_string($ls) && isset($ls[0])) {
+    if (is_string($ls)) {
         return $ls[0];
     }
 
