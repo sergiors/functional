@@ -10,8 +10,7 @@ function prepend()
     $args = func_get_args();
 
     $prepend = function ($el, array $ls) {
-        array_unshift($ls, $el);
-        return $ls;
+        return array_merge([$el], $ls);
     };
 
     return call_user_func_array(partial($prepend), $args);
