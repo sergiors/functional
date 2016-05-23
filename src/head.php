@@ -5,11 +5,22 @@ namespace Sergiors\Functional;
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param array $ls
+ * @param mixed $ls
  *
- * @return array
+ * @return mixed
  */
-function head(array $ls)
+function head($ls)
 {
+    if ([] === $ls
+        || '' === $ls
+        || null === $ls
+    ) {
+        return false;
+    }
+
+    if (is_string($ls) && isset($ls[0])) {
+        return $ls[0];
+    }
+
     return array_shift($ls);
 }
