@@ -21,41 +21,41 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     }
 
     /**
-     * @param \Closure $fn
+     * @param callable $fn
      *
      * @return Collection
      */
-    public function filter(\Closure $fn)
+    public function filter(callable $fn)
     {
         return new self(filter($fn, $this->ls));
     }
 
     /**
-     * @param \Closure $fn
+     * @param callable $fn
      *
      * @return Collection
      */
-    public function map(\Closure $fn)
+    public function map(callable $fn)
     {
         return new self(map($fn, $this->ls));
     }
 
     /**
-     * @param \Closure $fn
+     * @param callable $fn
      *
      * @return Collection
      */
-    public function each(\Closure $fn)
+    public function each(callable $fn)
     {
         return new self(each($fn, $this->ls));
     }
 
     /**
-     * @param \Closure $fn
+     * @param callable $fn
      *
      * @return mixed
      */
-    public function reduce(\Closure $fn)
+    public function reduce(callable $fn)
     {
         return reduce($fn, $this->ls);
     }
