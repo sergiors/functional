@@ -5,7 +5,7 @@ namespace Sergiors\Functional;
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param mixed $ls
+ * @param mixed $xs
  *
  * @return mixed
  */

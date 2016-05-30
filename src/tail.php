@@ -5,7 +5,7 @@ namespace Sergiors\Functional;
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param array $ls
+ * @param array $xs
  *
  * @return array
  */
