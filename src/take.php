@@ -11,8 +11,8 @@ function take()
 {
     $args = func_get_args();
 
-    $take = function ($n, array $ls) {
-        return array_slice($ls, 0, $n);
+    $take = function ($x, array $xs) {
+        return array_slice($xs, 0, $x);
     };
 
     return call_user_func_array(partial($take), $args);

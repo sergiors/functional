@@ -14,8 +14,8 @@ function pipe()
 {
     $ls = func_get_args();
 
-    $pipe = function (array $ls) {
-        return array_reduce($ls, function ($carry, $fn) {
+    $pipe = function (array $xs) {
+        return array_reduce($xs, function ($carry, $fn) {
             if (null === $carry) {
                 return $fn;
             }

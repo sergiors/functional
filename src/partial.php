@@ -18,8 +18,7 @@ function partial($fn)
         $args = array_merge($args, func_get_args());
 
         if ($params > count($args)) {
-            array_unshift($args, $fn);
-
+            $args = array_merge([$fn], $args);
             return call_user_func_array(__NAMESPACE__.'\partial', $args);
         }
 

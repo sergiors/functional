@@ -11,8 +11,8 @@ function append()
 {
     $args = func_get_args();
 
-    $append = function ($el, array $ls) {
-        return array_merge($ls, [$el]);
+    $append = function ($x, array $xs) {
+        return array_merge($xs, [$x]);
     };
 
     return call_user_func_array(partial($append), $args);

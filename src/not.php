@@ -11,8 +11,8 @@ function not()
 {
     $args = func_get_args();
 
-    $not = function ($val) {
-        return !$val;
+    $not = function ($x) {
+        return !$x;
     };
 
     return call_user_func_array(partial($not), $args);

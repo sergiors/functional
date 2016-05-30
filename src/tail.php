@@ -9,7 +9,7 @@ namespace Sergiors\Functional;
  *
  * @return array
  */
-function tail(array $ls)
+function tail(array $xs)
 {
-    return array_slice($ls, 1);
+    return array_slice($xs, 1);
 }

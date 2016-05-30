@@ -15,11 +15,11 @@ function get()
 {
     $args = func_get_args();
 
-    $get = function ($map, $key, $notfound = false) {
-        $map = (array) $map;
-        
-        if (isset($map[$key])) {
-            return $map[$key];
+    $get = function ($xs, $x, $notfound = false) {
+        $xs = (array) $xs;
+
+        if (isset($xs[$x])) {
+            return $xs[$x];
         }
 
         return $notfound;

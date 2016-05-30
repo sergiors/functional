@@ -9,14 +9,14 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function head($ls)
+function head($xs)
 {
-    if ([] === $ls
-        || '' === $ls
-        || null === $ls
+    if ([] === $xs
+        || '' === $xs
+        || null === $xs
     ) {
         return false;
     }
 
-    return $ls[0];
+    return $xs[0];
 }

@@ -13,8 +13,8 @@ function filter()
 {
     $args = func_get_args();
 
-    $filter = function (\Closure $fn, array $ls) {
-        return array_filter($ls, $fn);
+    $filter = function (\Closure $fn, array $xs) {
+        return array_filter($xs, $fn);
     };
 
     return call_user_func_array(partial($filter), $args);

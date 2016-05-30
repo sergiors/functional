@@ -11,13 +11,13 @@ function flatten()
 {
     $args = func_get_args();
 
-    $flatten = function (array $ls) {
-        return array_reduce($ls, function ($carry, $curr) {
-            if (is_array($curr)) {
-                return array_merge($carry, flatten($curr));
+    $flatten = function (array $xs) {
+        return array_reduce($xs, function ($carry, $x) {
+            if (is_array($x)) {
+                return array_merge($carry, flatten($x));
             }
 
-            $carry[] = $curr;
+            $carry[] = $x;
 
             return $carry;
         }, []);

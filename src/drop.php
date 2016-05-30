@@ -11,8 +11,8 @@ function drop()
 {
     $args = func_get_args();
 
-    $drop = function ($n, array $ls) {
-        return array_slice($ls, $n);
+    $drop = function ($x, array $xs) {
+        return array_slice($xs, $x);
     };
 
     return call_user_func_array(partial($drop), $args);

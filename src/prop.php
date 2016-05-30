@@ -11,11 +11,11 @@ function prop()
 {
     $args = func_get_args();
 
-    $prop = function ($prop, $ls) {
-        $ls = (array) $ls;
+    $prop = function ($x, $xs) {
+        $xs = (array) $xs;
 
-        if (array_key_exists($prop, $ls)) {
-            return $ls[$prop];
+        if (array_key_exists($x, $xs)) {
+            return $xs[$x];
         }
 
         return false;

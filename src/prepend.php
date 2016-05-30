@@ -9,8 +9,8 @@ function prepend()
 {
     $args = func_get_args();
 
-    $prepend = function ($el, array $ls) {
-        return array_merge([$el], $ls);
+    $prepend = function ($x, array $xs) {
+        return array_merge([$x], $xs);
     };
 
     return call_user_func_array(partial($prepend), $args);

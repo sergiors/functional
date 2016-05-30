@@ -11,8 +11,8 @@ function has()
 {
     $args = func_get_args();
 
-    $has = function ($prop, $ls) {
-        return array_key_exists($prop, (array) $ls);
+    $has = function ($x, $xs) {
+        return array_key_exists($x, (array) $xs);
     };
 
     return call_user_func_array(partial($has), $args);

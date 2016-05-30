@@ -11,9 +11,9 @@ function always()
 {
     $args = func_get_args();
 
-    $always = function ($val) {
-        return function () use ($val) {
-            return $val;
+    $always = function ($x) {
+        return function () use ($x) {
+            return $x;
         };
     };
 
