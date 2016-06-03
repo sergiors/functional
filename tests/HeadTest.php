@@ -14,6 +14,7 @@ class HeadTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(F\head([1, 2, 3, 4]), 1);
         $this->assertEquals(F\head(['a', 'b', 'c', 'd']), 'a');
         $this->assertEquals(F\head('abc'), 'a');
+        $this->assertEquals(F\head(['a' => 'a', 'b' => 'b']), 'a');
     }
 
     /**

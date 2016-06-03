@@ -18,5 +18,9 @@ function head($xs)
         return false;
     }
 
+    if (is_array($xs)) {
+        return array_values($xs)[0];
+    }
+
     return $xs[0];
 }
