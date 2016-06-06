@@ -19,7 +19,7 @@ function getin()
 
     $getin = function (array $xs, array $ks, $notfound = false) {
         if (false === isset($ks[0])) {
-            return $xs;
+            return $notfound;
         }
 
         $x = get($xs, $ks[0], $notfound);
