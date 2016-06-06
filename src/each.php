@@ -11,7 +11,7 @@ function each()
 {
     $args = func_get_args();
 
-    $each = function (\Closure $fn, array $xs) {
+    $each = function (callable $fn, array $xs) {
         array_walk($xs, $fn);
         return $xs;
     };

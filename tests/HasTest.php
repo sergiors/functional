@@ -27,6 +27,6 @@ class HasTest extends \PHPUnit_Framework_TestCase
         $user = new \stdClass();
         $user->name = 'Jack';
 
-        $this->assertTrue($hasName($user));
+        $this->assertTrue($hasName((array) $user));
     }
 }

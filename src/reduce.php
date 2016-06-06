@@ -13,7 +13,7 @@ function reduce()
 {
     $args = func_get_args();
 
-    $reduce = function (\Closure $fn, array $xs, $initial = null) {
+    $reduce = function (callable $fn, array $xs, $initial = null) {
         return array_reduce($xs, $fn, $initial);
     };
 

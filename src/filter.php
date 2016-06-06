@@ -13,7 +13,7 @@ function filter()
 {
     $args = func_get_args();
 
-    $filter = function (\Closure $fn, array $xs) {
+    $filter = function (callable $fn, array $xs) {
         return array_filter($xs, $fn);
     };
 
