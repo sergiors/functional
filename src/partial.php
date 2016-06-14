@@ -5,11 +5,11 @@ namespace Sergiors\Functional;
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param \Closure|string $fn
+ * @param callable $fn
  *
  * @return mixed
  */
-function partial($fn)
+function partial(callable $fn)
 {
     $args = array_slice(func_get_args(), 1);
     $params = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();

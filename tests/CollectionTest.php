@@ -37,6 +37,16 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function shouldConcatList()
+    {
+        $xs = new Collection([1, 2, 3]);
+        $this->assertInstanceOf(Collection::class, $xs);
+        $this->assertEquals([1, 2, 3, 4], $xs->concat([4])->toArray());
+    }
+
+    /**
+     * @test
+     */
     public function shouldReturnDiffObjects()
     {
         $ls = new Collection([1, 2, 3, 4, 6]);

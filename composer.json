@@ -29,6 +29,7 @@
             "src/always.php",
             "src/append.php",
             "src/compose.php",
+            "src/concat.php",
             "src/drop.php",
             "src/each.php",
             "src/equals.php",

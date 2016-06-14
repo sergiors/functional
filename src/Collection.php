@@ -10,14 +10,24 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     /**
      * @var array
      */
-    private $ls;
+    private $xs;
 
     /**
-     * @param array $ls
+     * @param array $xs
      */
-    public function __construct(array $ls)
+    public function __construct(array $xs)
     {
-        $this->ls = $ls;
+        $this->xs = $xs;
+    }
+
+    /**
+     * @param array $xs
+     *
+     * @return Collection
+     */
+    public function concat($xs)
+    {
+        return new self(concat($this->xs, $xs));
     }
 
     /**
@@ -27,7 +37,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function filter(callable $fn)
     {
-        return new self(filter($fn, $this->ls));
+        return new self(filter($fn, $this->xs));
     }
 
     /**
@@ -37,7 +47,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function map(callable $fn)
     {
-        return new self(map($fn, $this->ls));
+        return new self(map($fn, $this->xs));
     }
 
     /**
@@ -47,7 +57,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function each(callable $fn)
     {
-        return new self(each($fn, $this->ls));
+        return new self(each($fn, $this->xs));
     }
 
     /**
@@ -57,7 +67,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function reduce(callable $fn)
     {
-        return reduce($fn, $this->ls);
+        return reduce($fn, $this->xs);
     }
 
     /**
@@ -67,17 +77,17 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function prepend($value)
     {
-        return new self(prepend($value, $this->ls));
+        return new self(prepend($value, $this->xs));
     }
 
     /**
-     * @param mixed $value
+     * @param mixed $x
      *
      * @return Collection
      */
-    public function append($value)
+    public function append($x)
     {
-        return new self(append($value, $this->ls));
+        return new self(append($x, $this->xs));
     }
 
     /**
@@ -85,7 +95,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function count()
     {
-        return count($this->ls);
+        return count($this->xs);
     }
 
     /**
@@ -93,7 +103,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function getIterator()
     {
-        return new \ArrayIterator($this->ls);
+        return new \ArrayIterator($this->xs);
     }
 
     /**
@@ -101,7 +111,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function toArray()
     {
-        return $this->ls;
+        return $this->xs;
     }
 
     /**
@@ -111,7 +121,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function offsetExists($offset)
     {
-        return has($offset, $this->ls);
+        return has($offset, $this->xs);
     }
 
     /**
@@ -121,7 +131,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function offsetGet($offset)
     {
-        return get($this->ls, $offset, null);
+        return get($this->xs, $offset, null);
     }
 
     /**
@@ -129,14 +139,14 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
      *
      * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $x)
     {
         if (null === $offset) {
-            $this->ls[] = $value;
+            $this->xs[] = $x;
             return;
         }
 
-        $this->ls[$offset] = $value;
+        $this->xs[$offset] = $x;
     }
 
     /**
@@ -145,7 +155,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     public function offsetUnset($offset)
     {
         if ($this->offsetExists($offset)) {
-            unset($this->ls[$offset]);
+            unset($this->xs[$offset]);
         }
     }
 }
