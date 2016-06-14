@@ -61,23 +61,13 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     }
 
     /**
-     * @param callable $fn
-     *
-     * @return mixed
-     */
-    public function reduce(callable $fn)
-    {
-        return reduce($fn, $this->xs);
-    }
-
-    /**
-     * @param mixed $value
+     * @param mixed $x
      *
      * @return Collection
      */
-    public function prepend($value)
+    public function prepend($x)
     {
-        return new self(prepend($value, $this->xs));
+        return new self(prepend($x, $this->xs));
     }
 
     /**
@@ -88,6 +78,17 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     public function append($x)
     {
         return new self(append($x, $this->xs));
+    }
+
+    /**
+     * @param callable $fn
+     * @param mixed    $initial
+     *
+     * @return mixed
+     */
+    public function reduce(callable $fn, $initial)
+    {
+        return reduce($fn, $this->xs, $initial);
     }
 
     /**
@@ -137,7 +138,7 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     /**
      * @param mixed $offset
      *
-     * @param mixed $value
+     * @param mixed $x
      */
     public function offsetSet($offset, $x)
     {
