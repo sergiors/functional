@@ -2,9 +2,18 @@
 
 namespace Sergiors\Functional;
 
-function concat(/*$args*/)
+/**
+ * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ *
+ * @return mixed
+ */
+function concat(/* ...$args */)
 {
     $args = func_get_args();
 
-    return call_user_func_array(partial('array_merge'), $args);
+    $concat = function ($a, $b) {
+        return array_merge($a, $b);
+    };
+
+    return call_user_func_array(partial($concat), $args);
 }

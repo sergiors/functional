@@ -9,17 +9,16 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function partial(callable $fn)
+function partial(callable $fn /* ...$args */)
 {
     $args = array_slice(func_get_args(), 1);
-    $params = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
+    $numRequiredParams = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
-    return function () use ($fn, $args, $params) {
+    return function (/* ...$args */) use ($fn, $args, $numRequiredParams) {
         $args = array_merge($args, func_get_args());
 
-        if ($params > count($args)) {
-            $args = array_merge([$fn], $args);
-            return call_user_func_array(__NAMESPACE__.'\partial', $args);
+        if ($numRequiredParams > count($args)) {
+            return call_user_func_array(__NAMESPACE__.'\partial', array_merge([$fn], $args));
         }
 
         return call_user_func_array($fn, $args);
