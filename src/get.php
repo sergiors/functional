@@ -15,7 +15,9 @@ function get()
 {
     $args = func_get_args();
 
-    $get = function (array $xs, $x, $notfound = false) {
+    $get = function ($xs, $x, $notfound = false) {
+        $xs = (array) $xs;
+
         if (isset($xs[$x])) {
             return $xs[$x];
         }

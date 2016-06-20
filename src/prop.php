@@ -11,7 +11,9 @@ function prop()
 {
     $args = func_get_args();
 
-    $prop = function ($x, array $xs) {
+    $prop = function ($x, $xs) {
+        $xs = (array) $xs;
+        
         if (array_key_exists($x, $xs)) {
             return $xs[$x];
         }

@@ -17,7 +17,10 @@ function getin()
 {
     $args = func_get_args();
 
-    $getin = function (array $xs, array $ks, $notfound = false) {
+    $getin = function ($xs, $ks, $notfound = false) {
+        $xs = (array) $xs;
+        $ks = (array) $ks;
+
         if (false === isset($ks[0])) {
             return $notfound;
         }
