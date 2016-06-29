@@ -13,7 +13,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function getin()
+function getin(/* ...$args */)
 {
     $args = func_get_args();
 
