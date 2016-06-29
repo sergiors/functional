@@ -12,12 +12,12 @@ function ifelse()
     $args = func_get_args();
 
     $ifelse = function (callable $condition, callable $ontrue, callable $onfalse) {
-        return function ($args) use ($condition, $ontrue, $onfalse) {
-            if (call_user_func($condition, $args)) {
-                return call_user_func($ontrue, $args);
+        return function ($x) use ($condition, $ontrue, $onfalse) {
+            if ($condition($x)) {
+                return $ontrue($x);
             }
 
-            return call_user_func($onfalse, $args);
+            return $onfalse($x);
         };
     };
 

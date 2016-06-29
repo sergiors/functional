@@ -3,19 +3,19 @@
 namespace Sergiors\Functional;
 
 /**
- * Greater than
+ * Greater than or equals to
  *
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function gt()
+function gte()
 {
     $args = func_get_args();
 
-    $gt = function ($a, $b) {
-        return $a > $b;
+    $gte = function ($a, $b) {
+        return $a >= $b;
     };
 
-    return call_user_func_array(partial($gt), $args);
+    return call_user_func_array(partial($gte), $args);
 }

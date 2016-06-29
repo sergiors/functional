@@ -3,6 +3,8 @@
 namespace Sergiors\Functional;
 
 /**
+ * Less than
+ *
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed

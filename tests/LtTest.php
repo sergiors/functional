@@ -11,9 +11,9 @@ class LtTest extends \PHPUnit_Framework_TestCase
      */
     public function lt()
     {
-        $a = F\lt(10);
-        $this->assertTrue($a(11));
-        $this->assertFalse($a(9));
+        $x = F\lt(10);
+        $this->assertTrue($x(11));
+        $this->assertFalse($x(9));
         $this->assertTrue(F\lt(5, 10));
     }
 }
