@@ -11,8 +11,7 @@ class GtTest extends \PHPUnit_Framework_TestCase
      */
     public function gt()
     {
-        $a = F\gt(10);
-        $this->assertTrue($a(5));
+        $this->assertTrue(F\gt(10, 5));
         $this->assertTrue(F\gt(10, 5));
     }
 }

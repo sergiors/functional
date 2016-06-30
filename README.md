@@ -28,8 +28,34 @@ $addFourNumbers = funciton ($a, $b, $c, $d) {
 $partialAddFourNumbers = F\partial($addFourNumbers);
 $f = $partialAddFourNumbers(1, 2);
 $g = $f(3);
-$g(4); // 10
+
+echo $g(4); // => 10
 ```
+
+You can hold native functions with `Sergiors\Funcional\hold`.
+
+```php
+use Sergiors\Functional as F;
+
+$implode = F\hold('implode', ',');
+echo $implode(['a', 'b']); // => a,b
+
+// something more complex
+$pipe = F\pipe(
+    F\hold('array_slice', F\_, 2),
+    F\hold('array_map', function ($x) {
+        return $x * 2;
+    }),
+    F\hold('implode', ',')
+);
+
+echo $pipe([10, 20, 30, 40, 50]); // => 60,80,100
+```
+
+`Sergiors\Functional\_` is the placeholder for payload. If you don't set the placeholder, the payload will be last argument.
+
+Collection
+----------
 
 You can wrap an array with `Sergiors\Functional\Collection` to use fluent interface.
 
@@ -57,16 +83,22 @@ All functions are automatically applied partial application.
 always()
 append()
 compose()
+concat()
 each()
 equals()
 filter()
 flatten()
 get()
+getin()
 gt()
+gte()
 has()
 head()
+hold()
+id()
 ifelse()
 lt()
+lte()
 map()
 not()
 partial()
@@ -75,16 +107,18 @@ prop()
 prepend()
 reduce()
 tail()
+take()
 ```
 
 
 ```
+Collection::concat()
 Collection::filter()
 Collection::map()
 Collection::each()
-Collection::reduce()
 Collection::prepend()
 Collection::append()
+Collection::reduce()
 Collection::count()
 Collection::getIterator()
 Collection::toArray()

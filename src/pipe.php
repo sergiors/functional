@@ -12,7 +12,7 @@ namespace Sergiors\Functional;
  */
 function pipe()
 {
-    $ls = func_get_args();
+    $xs = func_get_args();
 
     $pipe = function (array $xs) {
         return array_reduce($xs, function ($carry, $fn) {
@@ -28,5 +28,5 @@ function pipe()
         });
     };
 
-    return call_user_func(partial($pipe), $ls);
+    return call_user_func(partial($pipe), $xs);
 }
