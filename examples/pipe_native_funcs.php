@@ -6,9 +6,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $join = F\pipe(
     F\flatten(),
-    function ($xs) {
-        return implode(', ', $xs);
-    }
+    F\partial('implode', ', ')
 );
 
 $countries = F\pipe(
@@ -50,5 +48,5 @@ $xs = [
     ]
 ];
 
-var_dump($countries($xs));
-var_dump($cities($xs));
+var_dump($countries($xs)); // => Brazil, USA, China
+var_dump($cities($xs)); // => Florianópolis, Rio de Janeiro, Porto Alegre, Baltimore, San Diego, Macau, Hong Kong

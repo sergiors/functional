@@ -26,6 +26,7 @@
             "Sergiors\\Functional\\": "src"
         },
         "files": [
+            "src/_.php",
             "src/always.php",
             "src/append.php",
             "src/compose.php",
@@ -41,6 +42,8 @@
             "src/gte.php",
             "src/has.php",
             "src/head.php",
+            "src/hold.php",
+            "src/id.php",
             "src/ifelse.php",
             "src/lt.php",
             "src/lte.php",
