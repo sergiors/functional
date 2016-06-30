@@ -23,7 +23,7 @@ use Sergiors\Functional as F;
 
 $addFourNumbers = funciton ($a, $b, $c, $d) {
     return $a + $b + $c + $d;
-}
+};
 
 $partialAddFourNumbers = F\partial($addFourNumbers);
 $f = $partialAddFourNumbers(1, 2);
@@ -70,8 +70,8 @@ $ls2 = $ls1->filter(function ($x) {
     return $x + 1;
 });
 
-print_r($ls1->toArray()); // [1, 2, 3, 4, 5, 6]
-print_r($ls2); // [4, 5, 6, 7]
+print_r($ls1->toArray()); // => [1, 2, 3, 4, 5, 6]
+print_r($ls2->toArray()); // => [4, 5, 6, 7]
 ```
 
 API
