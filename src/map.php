@@ -9,7 +9,7 @@ namespace Sergiors\Functional;
  *
  * @link http://php.net/array_map
  */
-function map()
+function map(/* ...$args */)
 {
     $args = func_get_args();
 

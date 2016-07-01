@@ -10,7 +10,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function compose()
+function compose(/* ...$args */)
 {
     $args = func_get_args();
 

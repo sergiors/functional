@@ -9,7 +9,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function lte()
+function lte(/* ...$args */)
 {
     $args = func_get_args();
 

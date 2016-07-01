@@ -7,7 +7,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function drop()
+function drop(/* ...$args */)
 {
     $args = func_get_args();
 

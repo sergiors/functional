@@ -9,7 +9,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function filter()
+function filter(/* ...$args */)
 {
     $args = func_get_args();
 

@@ -7,7 +7,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function each()
+function each(/* ...$args */)
 {
     $args = func_get_args();
 

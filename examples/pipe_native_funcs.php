@@ -48,5 +48,5 @@ $xs = [
     ]
 ];
 
-var_dump($countries($xs)); // => Brazil, USA, China
-var_dump($cities($xs)); // => Florianópolis, Rio de Janeiro, Porto Alegre, Baltimore, San Diego, Macau, Hong Kong
+assert('Brazil, USA, China' === $countries($xs));
+assert('Florianópolis, Rio de Janeiro, Porto Alegre, Baltimore, San Diego, Macau, Hong Kong' === $cities($xs));

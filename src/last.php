@@ -4,6 +4,8 @@ namespace Sergiors\Functional;
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ *
+ * @return mixed
  */
 function last(/* ...$args */)
 {

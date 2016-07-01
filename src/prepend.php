@@ -4,8 +4,10 @@ namespace Sergiors\Functional;
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ *
+ * @return mixed
  */
-function prepend()
+function prepend(/* ...$args */)
 {
     $args = func_get_args();
 

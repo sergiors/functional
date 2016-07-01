@@ -7,7 +7,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function flatten()
+function flatten(/* ...$args */)
 {
     $args = func_get_args();
 
@@ -17,9 +17,7 @@ function flatten()
                 return array_merge($carry, flatten($x));
             }
 
-            $carry[] = $x;
-
-            return $carry;
+            return array_merge($carry, [$x]);
         }, []);
     };
 

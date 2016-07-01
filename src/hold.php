@@ -7,7 +7,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function hold()
+function hold(/* ...$args */)
 {
     $args = func_get_args();
     $placeholder = pipe(

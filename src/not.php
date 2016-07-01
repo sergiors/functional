@@ -7,7 +7,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function not()
+function not(/* ...$args */)
 {
     $args = func_get_args();
 

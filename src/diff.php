@@ -8,6 +8,8 @@ namespace Sergiors\Functional;
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @link http://php.net/array_diff
+ *
+ * @return mixed
  */
 function diff(/* ...$args */)
 {

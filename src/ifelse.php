@@ -7,7 +7,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function ifelse()
+function ifelse(/* ...$args */)
 {
     $args = func_get_args();
 
