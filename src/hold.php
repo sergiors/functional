@@ -14,9 +14,7 @@ function hold(/* ...$args */)
         filter(function ($x) {
             return _ === $x;
         }),
-        function ($xs) {
-            return array_keys($xs) ?: [];
-        }
+        'array_keys'
     );
 
     $hold = function (callable $fn) use ($placeholder) {
