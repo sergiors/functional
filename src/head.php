@@ -7,7 +7,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function head()
+function head(/* ...$args */)
 {
     $args = func_get_args();
 
@@ -16,7 +16,7 @@ function head()
             || '' === $xs
             || null === $xs
         ) {
-            return false;
+            return null;
         }
 
         if (is_array($xs)) {
