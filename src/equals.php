@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const equals = __NAMESPACE__.'\equals';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

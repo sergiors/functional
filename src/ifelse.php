@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const ifelse = __NAMESPACE__.'\ifelse';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

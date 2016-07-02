@@ -5,7 +5,7 @@ use Sergiors\Functional as F;
 require_once __DIR__.'/../vendor/autoload.php';
 
 $join = F\pipe(
-    F\flatten(),
+    F\flatten,
     F\partial('implode', ', ')
 );
 

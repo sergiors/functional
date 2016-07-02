@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const reduce = __NAMESPACE__.'\reduce';
+
 /**
  * Almost an alias.
  *

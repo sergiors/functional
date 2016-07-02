@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const take = __NAMESPACE__.'\take';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

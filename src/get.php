@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const get = __NAMESPACE__.'\get';
+
 /**
  * Returns the value mapped to key, $notfound value if key not present.
  *

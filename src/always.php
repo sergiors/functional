@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const always = __NAMESPACE__.'\always';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

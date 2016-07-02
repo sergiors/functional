@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const append = __NAMESPACE__.'\append';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

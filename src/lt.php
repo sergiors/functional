@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const lt = __NAMESPACE__.'\lt';
+
 /**
  * Less than
  *

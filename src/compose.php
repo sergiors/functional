@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const compose = __NAMESPACE__.'\compose';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

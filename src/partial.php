@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const partial = __NAMESPACE__.'\partial';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const filter = __NAMESPACE__.'\filter';
+
 /**
  * Almost an alias.
  *

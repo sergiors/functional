@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const prop = __NAMESPACE__.'\prop';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

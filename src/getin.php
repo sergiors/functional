@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const getin = __NAMESPACE__.'\getin';
+
 /**
  * Returns the value in a nested associative structure,
  * where $ks is a sequence of keys. Returns false if the key

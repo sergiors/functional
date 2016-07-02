@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const gte = __NAMESPACE__.'\gte';
+
 /**
  * Greater than or equals to
  *

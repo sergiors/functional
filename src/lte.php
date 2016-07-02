@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const lte = __NAMESPACE__.'\lte';
+
 /**
  * Less than or equals to
  *

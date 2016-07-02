@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const flatten = __NAMESPACE__.'\flatten';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

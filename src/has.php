@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const has = __NAMESPACE__.'\has';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *

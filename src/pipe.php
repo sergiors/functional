@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const pipe = __NAMESPACE__.'\pipe';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
