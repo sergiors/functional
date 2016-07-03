@@ -87,4 +87,12 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
         $collection = new Collection([1, 2, 3]);
         $this->assertInstanceOf(\ArrayIterator::class, $collection->getIterator());
     }
+
+    /**
+     * @test
+     */
+    public function shouldReturnSortArray()
+    {
+        $this->assertEquals([1, 2, 3], (new Collection([2, 1, 3]))->sort()->toArray());
+    }
 }

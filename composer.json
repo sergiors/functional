@@ -57,6 +57,7 @@
             "src/prepend.php",
             "src/prop.php",
             "src/reduce.php",
+            "src/sort.php",
             "src/tail.php",
             "src/take.php",
             "src/takewhile.php"
