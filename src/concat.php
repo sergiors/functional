@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const concat = __NAMESPACE__.'\concat';
+const concat = '\Sergiors\Functional\concat';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

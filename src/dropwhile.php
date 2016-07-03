@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const dropwhile = __NAMESPACE__.'\dropwhile';
+const dropwhile = '\Sergiors\Functional\dropwhile';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const drop = __NAMESPACE__.'\drop';
+const drop = '\Sergiors\Functional\drop';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

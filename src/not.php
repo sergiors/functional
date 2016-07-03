@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const not = __NAMESPACE__.'\not';
+const not = '\Sergiors\Functional\not';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

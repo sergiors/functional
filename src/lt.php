@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const lt = __NAMESPACE__.'\lt';
+const lt = '\Sergiors\Functional\lt';
 
 /**
  * Less than

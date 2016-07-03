@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const prepend = __NAMESPACE__.'\prepend';
+const prepend = '\Sergiors\Functional\prepend';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

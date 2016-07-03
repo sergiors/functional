@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const partial = __NAMESPACE__.'\partial';
+const partial = '\Sergiors\Functional\partial';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
@@ -20,7 +20,7 @@ function partial(callable $fn /* ...$args */)
         $args = array_merge($args, func_get_args());
 
         if ($numRequiredParams > count($args)) {
-            return call_user_func_array(__NAMESPACE__.'\partial', array_merge([$fn], $args));
+            return call_user_func_array('\Sergiors\Functional\partial', array_merge([$fn], $args));
         }
 
         return call_user_func_array($fn, $args);

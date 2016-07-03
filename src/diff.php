@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const diff = __NAMESPACE__.'\diff';
+const diff = '\Sergiors\Functional\diff';
 
 /**
  * Just an alias.
