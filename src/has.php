@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const has = __NAMESPACE__.'\has';
+const has = '\Sergiors\Functional\has';
 
 /**
  * Just an alias.

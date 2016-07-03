@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const head = __NAMESPACE__.'\head';
+const head = '\Sergiors\Functional\head';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

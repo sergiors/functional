@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const take = __NAMESPACE__.'\take';
+const take = '\Sergiors\Functional\take';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

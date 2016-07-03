@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const getin = __NAMESPACE__.'\getin';
+const getin = '\Sergiors\Functional\getin';
 
 /**
  * Returns the value in a nested associative structure,

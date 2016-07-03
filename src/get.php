@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const get = __NAMESPACE__.'\get';
+const get = '\Sergiors\Functional\get';
 
 /**
  * Returns the value mapped to key, $notfound value if key not present.

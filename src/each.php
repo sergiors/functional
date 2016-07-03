@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const each = __NAMESPACE__.'\each';
+const each = '\Sergiors\Functional\each';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

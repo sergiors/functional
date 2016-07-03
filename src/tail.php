@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const tail = __NAMESPACE__.'\tail';
+const tail = '\Sergiors\Functional\tail';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

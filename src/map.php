@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const map = __NAMESPACE__.'\map';
+const map = '\Sergiors\Functional\map';
 
 /**
  * Just an alias.

@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const always = __NAMESPACE__.'\always';
+const always = '\Sergiors\Functional\always';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

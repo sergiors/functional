@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const gte = __NAMESPACE__.'\gte';
+const gte = '\Sergiors\Functional\gte';
 
 /**
  * Greater than or equals to

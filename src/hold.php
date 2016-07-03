@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const hold = __NAMESPACE__.'\hold';
+const hold = '\Sergiors\Functional\hold';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
