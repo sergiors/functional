@@ -81,13 +81,11 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     }
 
     /**
-     * @param callable $fn
-     *
      * @return Collection
      */
-    public function sort(callable $fn)
+    public function sort()
     {
-        return new self(sort($this->xs, $fn));
+        return new self(sort($this->xs));
     }
 
     /**
