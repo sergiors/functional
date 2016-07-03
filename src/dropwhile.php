@@ -7,7 +7,7 @@ const dropwhile = __NAMESPACE__.'\dropwhile';
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @return mixed
+ * @return array
  */
 function dropwhile(/* ...$args */)
 {

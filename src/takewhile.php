@@ -6,7 +6,7 @@ namespace Sergiors\Functional;
  * @author Marcelo Camargo <marcelocamargo@linuxmail.org>
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @return mixed
+ * @return array
  */
 function takewhile(/* ...$args */)
 {
