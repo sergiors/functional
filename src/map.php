@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const map = __NAMESPACE__.'\map';
+
 /**
  * Just an alias.
  *
@@ -9,7 +11,7 @@ namespace Sergiors\Functional;
  *
  * @link http://php.net/array_map
  */
-function map()
+function map(/* ...$args */)
 {
     $args = func_get_args();
 

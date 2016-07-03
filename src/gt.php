@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const gt = __NAMESPACE__.'\gt';
+
 /**
  * Greater than
  *
@@ -9,7 +11,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function gt()
+function gt(/* ...$args */)
 {
     $args = func_get_args();
 

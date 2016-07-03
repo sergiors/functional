@@ -2,16 +2,14 @@
 
 namespace Sergiors\Functional;
 
-const always = __NAMESPACE__.'\always';
+const last = __NAMESPACE__.'\last';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function always($x)
+function last(array $xss)
 {
-    return function () use ($x) {
-        return $x;
-    };
+    return get(array_values(array_slice($xss, -1)), 0, null);
 }

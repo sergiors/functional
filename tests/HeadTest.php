@@ -20,10 +20,10 @@ class HeadTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function shouldReturnFalse()
+    public function shouldReturnNull()
     {
-        $this->assertFalse(F\head([]));
-        $this->assertFalse(F\head(''));
-        $this->assertFalse(F\head(null));
+        $this->assertNull(F\head([]));
+        $this->assertNull(F\head(''));
+        $this->assertNull(F\head(null));
     }
 }

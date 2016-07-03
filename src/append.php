@@ -2,12 +2,14 @@
 
 namespace Sergiors\Functional;
 
+const append = __NAMESPACE__.'\append';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function append()
+function append(/* ...$args */)
 {
     $args = func_get_args();
 

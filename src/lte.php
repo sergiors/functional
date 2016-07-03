@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const lte = __NAMESPACE__.'\lte';
+
 /**
  * Less than or equals to
  *
@@ -9,7 +11,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function lte()
+function lte(/* ...$args */)
 {
     $args = func_get_args();
 

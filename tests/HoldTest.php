@@ -16,6 +16,9 @@ class HoldTest extends \PHPUnit_Framework_TestCase
         });
 
         $this->assertEquals([20, 15], array_values($hold([5, 20, 10, 15])));
+
+        $upper = F\hold('strtoupper');
+        $this->assertEquals('HELLO', $upper('hello'));
     }
 
     /**

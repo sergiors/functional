@@ -15,10 +15,12 @@ class IfelseTest extends \PHPUnit_Framework_TestCase
             'name' => 'James Tiberius Kirk'
         ];
 
-        $expected = F\ifelse(F\has('name'), F\compose('strtoupper', F\prop('name')), F\always(false));
+        $upper = F\compose('strtoupper', F\prop('name'));
+
+        $expected = F\ifelse(F\has('name'), $upper, F\always(false));
         $this->assertEquals($expected($ls), 'JAMES TIBERIUS KIRK');
 
-        $expected = F\ifelse(F\has('lastname'), F\compose('strtoupper', F\prop('name')), F\always(false));
+        $expected = F\ifelse(F\has('lastname'), $upper, F\always(false));
         $this->assertFalse($expected($ls));
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const get = __NAMESPACE__.'\get';
+
 /**
  * Returns the value mapped to key, $notfound value if key not present.
  *
@@ -15,10 +17,8 @@ function get(/* ...$args */)
 {
     $args = func_get_args();
 
-    $get = function ($xs, $x, $notfound = false) {
-        $xs = (array) $xs;
-
-        if (isset($xs[$x])) {
+    $get = function (array $xs, $x, $notfound = false) {
+        if (array_key_exists($x, $xs)) {
             return $xs[$x];
         }
 

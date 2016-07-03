@@ -2,18 +2,20 @@
 
 namespace Sergiors\Functional;
 
-const has = __NAMESPACE__.'\has';
+const diff = __NAMESPACE__.'\diff';
 
 /**
  * Just an alias.
  *
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @link http://php.net/array_diff
+ *
  * @return mixed
  */
-function has(/* ...$args */)
+function diff(/* ...$args */)
 {
     $args = func_get_args();
 
-    return call_user_func_array(partial('array_key_exists'), $args);
+    return call_user_func_array(partial('array_diff'), $args);
 }

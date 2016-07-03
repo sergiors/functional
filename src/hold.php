@@ -2,21 +2,21 @@
 
 namespace Sergiors\Functional;
 
+const hold = __NAMESPACE__.'\hold';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function hold()
+function hold(/* ...$args */)
 {
     $args = func_get_args();
     $placeholder = pipe(
         filter(function ($x) {
             return _ === $x;
         }),
-        function ($xs) {
-            return array_keys($xs) ?: [];
-        }
+        'array_keys'
     );
 
     $hold = function (callable $fn) use ($placeholder) {
@@ -34,5 +34,5 @@ function hold()
         };
     };
 
-    return call_user_func_array(partial($hold), $args);
+    return call_user_func_array($hold, $args);
 }

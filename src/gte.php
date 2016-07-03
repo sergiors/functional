@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const gte = __NAMESPACE__.'\gte';
+
 /**
  * Greater than or equals to
  *
@@ -9,7 +11,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function gte()
+function gte(/* ...$args */)
 {
     $args = func_get_args();
 

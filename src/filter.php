@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const filter = __NAMESPACE__.'\filter';
+
 /**
  * Almost an alias.
  *
@@ -9,7 +11,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function filter()
+function filter(/* ...$args */)
 {
     $args = func_get_args();
 

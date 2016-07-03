@@ -2,12 +2,14 @@
 
 namespace Sergiors\Functional;
 
+const each = __NAMESPACE__.'\each';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function each()
+function each(/* ...$args */)
 {
     $args = func_get_args();
 

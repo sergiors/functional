@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const getin = __NAMESPACE__.'\getin';
+
 /**
  * Returns the value in a nested associative structure,
  * where $ks is a sequence of keys. Returns false if the key
@@ -17,11 +19,8 @@ function getin(/* ...$args */)
 {
     $args = func_get_args();
 
-    $getin = function ($xs, $ks, $notfound = false) {
-        $xs = (array) $xs;
-        $ks = (array) $ks;
-
-        if (false === isset($ks[0])) {
+    $getin = function (array $xs, array $ks, $notfound = false) {
+        if (false === array_key_exists(0, $ks)) {
             return $notfound;
         }
 

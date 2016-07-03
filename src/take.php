@@ -2,12 +2,14 @@
 
 namespace Sergiors\Functional;
 
+const take = __NAMESPACE__.'\take';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function take()
+function take(/* ...$args */)
 {
     $args = func_get_args();
 

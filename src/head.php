@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const head = __NAMESPACE__.'\head';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
@@ -15,7 +17,7 @@ function head($xs)
         || '' === $xs
         || null === $xs
     ) {
-        return false;
+        return null;
     }
 
     if (is_array($xs)) {

@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const lt = __NAMESPACE__.'\lt';
+
 /**
  * Less than
  *
@@ -9,7 +11,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function lt()
+function lt(/* ...$args */)
 {
     $args = func_get_args();
 

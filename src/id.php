@@ -2,18 +2,16 @@
 
 namespace Sergiors\Functional;
 
+const id = __NAMESPACE__.'\id';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param mixed $x
+ *
  * @return mixed
  */
-function id()
+function id($x)
 {
-    $args = func_get_args();
-
-    $id = function ($x) {
-        return $x;
-    };
-
-    return call_user_func_array(partial($id), $args);
+    return $x;
 }

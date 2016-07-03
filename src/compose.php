@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+const compose = __NAMESPACE__.'\compose';
+
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
@@ -10,7 +12,7 @@ namespace Sergiors\Functional;
  *
  * @return mixed
  */
-function compose()
+function compose(/* ...$args */)
 {
     $args = func_get_args();
 
