@@ -34,5 +34,5 @@ function hold(/* ...$args */)
         };
     };
 
-    return call_user_func_array(partial($hold), $args);
+    return call_user_func_array($hold, $args);
 }

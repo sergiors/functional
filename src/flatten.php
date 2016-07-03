@@ -9,19 +9,13 @@ const flatten = __NAMESPACE__.'\flatten';
  *
  * @return mixed
  */
-function flatten(/* ...$args */)
+function flatten(array $xs)
 {
-    $args = func_get_args();
+    return array_reduce($xs, function ($carry, $x) {
+        if (is_array($x)) {
+            return array_merge($carry, flatten($x));
+        }
 
-    $flatten = function (array $xs) {
-        return array_reduce($xs, function ($carry, $x) {
-            if (is_array($x)) {
-                return array_merge($carry, flatten($x));
-            }
-
-            return array_merge($carry, [$x]);
-        }, []);
-    };
-
-    return call_user_func_array(partial($flatten), $args);
+        return array_merge($carry, [$x]);
+    }, []);
 }

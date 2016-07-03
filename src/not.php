@@ -9,13 +9,7 @@ const not = __NAMESPACE__.'\not';
  *
  * @return mixed
  */
-function not(/* ...$args */)
+function not($x)
 {
-    $args = func_get_args();
-
-    $not = function ($x) {
-        return !$x;
-    };
-
-    return call_user_func_array(partial($not), $args);
+    return !$x;
 }

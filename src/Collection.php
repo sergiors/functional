@@ -81,12 +81,12 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     }
 
     /**
-     * @param callable $fn
-     * @param mixed    $initial
+     * @param callable   $fn
+     * @param mixed|null $initial
      *
      * @return mixed
      */
-    public function reduce(callable $fn, $initial)
+    public function reduce(callable $fn, $initial = null)
     {
         return reduce($fn, $this->xs, $initial);
     }

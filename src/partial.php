@@ -13,7 +13,7 @@ const partial = __NAMESPACE__.'\partial';
  */
 function partial(callable $fn /* ...$args */)
 {
-    $args = array_slice(func_get_args(), 1);
+    $args = tail(func_get_args());
     $numRequiredParams = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
     return function (/* ...$args */) use ($fn, $args, $numRequiredParams) {

@@ -16,19 +16,15 @@ function pipe(/* ...$args */)
 {
     $args = func_get_args();
 
-    $pipe = function (array $xs) {
-        return array_reduce($xs, function ($carry, $fn) {
-            if (null === $carry) {
-                return $fn;
-            }
+    return array_reduce($args, function ($carry, $fn) {
+        if (null === $carry) {
+            return $fn;
+        }
 
-            return function () use ($carry, $fn) {
-                $args = func_get_args();
+        return function () use ($carry, $fn) {
+            $args = func_get_args();
 
-                return $fn(call_user_func_array($carry, $args));
-            };
-        });
-    };
-
-    return call_user_func(partial($pipe), $args);
+            return $fn(call_user_func_array($carry, $args));
+        };
+    });
 }

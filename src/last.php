@@ -9,13 +9,7 @@ const last = __NAMESPACE__.'\last';
  *
  * @return mixed
  */
-function last(/* ...$args */)
+function last(array $xss)
 {
-    $args = func_get_args();
-
-    $last = function ($xs) {
-        return get(array_values(array_slice($xs, -1)), 0, null);
-    };
-
-    return call_user_func_array(partial($last), $args);
+    return get(array_values(array_slice($xss, -1)), 0, null);
 }

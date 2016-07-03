@@ -33,6 +33,7 @@
             "src/concat.php",
             "src/diff.php",
             "src/drop.php",
+            "src/dropwhile.php",
             "src/each.php",
             "src/equals.php",
             "src/filter.php",
@@ -57,7 +58,8 @@
             "src/prop.php",
             "src/reduce.php",
             "src/tail.php",
-            "src/take.php"
+            "src/take.php",
+            "src/takewhile.php"
         ]
     },
     "autoload-dev": {

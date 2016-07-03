@@ -7,15 +7,11 @@ const tail = __NAMESPACE__.'\tail';
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array $xs
+ *
  * @return array
  */
-function tail(/* ...$args */)
+function tail(array $xs)
 {
-    $args = func_get_args();
-
-    $tail = function (array $xs) {
-        return array_slice($xs, 1);
-    };
-
-    return call_user_func_array(partial($tail), $args);
+    return array_slice($xs, 1);
 }

@@ -85,6 +85,7 @@ append()
 compose()
 concat()
 diff()
+drop()
 each()
 equals()
 filter()
@@ -110,6 +111,7 @@ prepend()
 reduce()
 tail()
 take()
+takewhile()
 ```
 
 

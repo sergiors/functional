@@ -9,15 +9,9 @@ const always = __NAMESPACE__.'\always';
  *
  * @return mixed
  */
-function always(/* ...$args */)
+function always($x)
 {
-    $args = func_get_args();
-
-    $always = function ($x) {
-        return function () use ($x) {
-            return $x;
-        };
+    return function () use ($x) {
+        return $x;
     };
-
-    return call_user_func_array(partial($always), $args);
 }
