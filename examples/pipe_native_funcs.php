@@ -4,24 +4,17 @@ use Sergiors\Functional as F;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$join = F\pipe(
-    F\flatten,
-    F\partial('implode', ', ')
-);
+$join = F\pipe(F\flatten, F\partial('implode', ', '));
 
-$countries = F\pipe(
-    F\map(function ($x) {
-        return $x['country'];
-    }),
-    $join
-);
+$mapCountry = F\map(function ($x) {
+    return $x['country'];
+});
+$countries = F\pipe($mapCountry, $join)->strtoupper(); // or `->pipe('strtoupper')`
 
-$cities = F\pipe(
-    F\map(function ($x) {
-        return $x['cities'];
-    }),
-    $join
-);
+$mapCity = F\map(function ($x) {
+    return $x['cities'];
+});
+$cities = F\pipe($mapCity)->pipe($join);
 
 $xs = [
     [
@@ -48,5 +41,5 @@ $xs = [
     ]
 ];
 
-assert('Brazil, USA, China' === $countries($xs));
+assert('BRAZIL, USA, CHINA' === $countries($xs));
 assert('Florianópolis, Rio de Janeiro, Porto Alegre, Baltimore, San Diego, Macau, Hong Kong' === $cities($xs));

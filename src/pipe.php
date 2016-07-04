@@ -2,6 +2,8 @@
 
 namespace Sergiors\Functional;
 
+use Sergiors\Pipeline\Pipeline;
+
 const pipe = '\Sergiors\Functional\pipe';
 
 /**
@@ -14,17 +16,5 @@ const pipe = '\Sergiors\Functional\pipe';
  */
 function pipe(/* ...$args */)
 {
-    $args = func_get_args();
-
-    return array_reduce($args, function ($carry, $fn) {
-        if (null === $carry) {
-            return $fn;
-        }
-
-        return function () use ($carry, $fn) {
-            $args = func_get_args();
-
-            return $fn(call_user_func_array($carry, $args));
-        };
-    });
+    return new Pipeline(func_get_args());
 }

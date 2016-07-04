@@ -47,4 +47,14 @@ class PipeTest extends \PHPUnit_Framework_TestCase
         $f4 = F\pipe('deg2rad', 'cos');
         $this->assertEquals($f4(360), cos(deg2rad(360)));
     }
+
+    /**
+     * @test
+     */
+    public function fluentPipe()
+    {
+        $pipe = F\pipe('strtoupper')->pipe('strrev');
+
+        $this->assertEquals('OLLEH', $pipe('hello'));
+    }
 }

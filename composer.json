@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": "^5.5|^7.0"
+        "php": "^5.5|^7.0",
+        "sergiors/pipeline": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",

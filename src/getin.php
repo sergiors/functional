@@ -20,7 +20,7 @@ function getin(/* ...$args */)
     $args = func_get_args();
 
     $getin = function (array $xs, array $ks, $notfound = false) {
-        if (false === array_key_exists(0, $ks)) {
+        if (!array_key_exists(0, $ks)) {
             return $notfound;
         }
 

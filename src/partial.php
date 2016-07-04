@@ -20,7 +20,7 @@ function partial(callable $fn /* ...$args */)
         $args = array_merge($args, func_get_args());
 
         if ($numRequiredParams > count($args)) {
-            return call_user_func_array('\Sergiors\Functional\partial', array_merge([$fn], $args));
+            return call_user_func_array(partial, array_merge([$fn], $args));
         }
 
         return call_user_func_array($fn, $args);
