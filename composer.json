@@ -32,6 +32,7 @@
             "src/append.php",
             "src/compose.php",
             "src/concat.php",
+            "src/deleteat.php",
             "src/diff.php",
             "src/drop.php",
             "src/dropwhile.php",
