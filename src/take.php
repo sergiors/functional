@@ -2,20 +2,18 @@
 
 namespace Sergiors\Functional;
 
-const take = '\Sergiors\Functional\take';
+const take = __NAMESPACE__.'\take';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
-function take(/* ...$args */)
+function take(...$args)
 {
-    $args = func_get_args();
-
-    $take = function ($n, array $xs) {
+    return partial(function ($n, array $xs) {
         return array_slice($xs, 0, $n);
-    };
-
-    return call_user_func_array(partial($take), $args);
+    })(...$args);
 }

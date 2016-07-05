@@ -2,21 +2,19 @@
 
 namespace Sergiors\Functional;
 
-const each = '\Sergiors\Functional\each';
+const each = __NAMESPACE__.'\each';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
-function each(/* ...$args */)
+function each(...$args)
 {
-    $args = func_get_args();
-
-    $each = function (callable $fn, array $xs) {
-        array_walk($xs, $fn);
-        return $xs;
-    };
-
-    return call_user_func_array(partial($each), $args);
+    return partial(function (callable $fn, array $xss) {
+        array_walk($xss, $fn);
+        return $xss;
+    })(...$args);
 }

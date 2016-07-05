@@ -2,20 +2,16 @@
 
 namespace Sergiors\Functional;
 
-const prepend = '\Sergiors\Functional\prepend';
+const prepend = __NAMESPACE__.'\prepend';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function prepend(/* ...$args */)
+function prepend(...$args)
 {
-    $args = func_get_args();
-
-    $prepend = function ($x, array $xs) {
+    return partial(function ($x, array $xs) {
         return array_merge([$x], $xs);
-    };
-
-    return call_user_func_array(partial($prepend), $args);
+    })(...$args);
 }

@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const diff = '\Sergiors\Functional\diff';
+const diff = __NAMESPACE__.'\diff';
 
 /**
  * Just an alias.
@@ -11,11 +11,11 @@ const diff = '\Sergiors\Functional\diff';
  *
  * @link http://php.net/array_diff
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
-function diff(/* ...$args */)
+function diff(...$args)
 {
-    $args = func_get_args();
-
-    return call_user_func_array(partial('array_diff'), $args);
+    return partial('array_diff')(...$args);
 }

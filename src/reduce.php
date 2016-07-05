@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const reduce = '\Sergiors\Functional\reduce';
+const reduce = __NAMESPACE__.'\reduce';
 
 /**
  * Almost an alias.
@@ -11,13 +11,9 @@ const reduce = '\Sergiors\Functional\reduce';
  *
  * @return mixed
  */
-function reduce(/* ...$args */)
+function reduce(...$args)
 {
-    $args = func_get_args();
-
-    $reduce = function (callable $fn, array $xs, $initial = null) {
+    return partial(function (callable $fn, array $xs, $initial = null) {
         return array_reduce($xs, $fn, $initial);
-    };
-
-    return call_user_func_array(partial($reduce), $args);
+    })(...$args);
 }

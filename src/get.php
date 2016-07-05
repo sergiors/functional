@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const get = '\Sergiors\Functional\get';
+const get = __NAMESPACE__.'\get';
 
 /**
  * Returns the value mapped to key, $notfound value if key not present.
@@ -11,19 +11,15 @@ const get = '\Sergiors\Functional\get';
  *
  * @link https://clojuredocs.org/clojure.core/get
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
-function get(/* ...$args */)
+function get(...$args)
 {
-    $args = func_get_args();
-
-    $get = function (array $xs, $x, $notfound = false) {
-        if (array_key_exists($x, $xs)) {
-            return $xs[$x];
-        }
-
-        return $notfound;
-    };
-
-    return call_user_func_array(partial($get), $args);
+    return partial(function (array $xss, $x, $notfound = false) {
+        return has($x, $xss)
+            ? $xss[$x]
+            : $notfound;
+    })(...$args);
 }

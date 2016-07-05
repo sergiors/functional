@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const sort = '\Sergiors\Functional\sort';
+const sort = __NAMESPACE__.'\sort';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

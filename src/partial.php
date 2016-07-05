@@ -2,27 +2,25 @@
 
 namespace Sergiors\Functional;
 
-const partial = '\Sergiors\Functional\partial';
+const partial = __NAMESPACE__.'\partial';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @param callable $fn
+ * @param array ...$rest
  *
  * @return mixed
  */
-function partial(callable $fn /* ...$args */)
+function partial(callable $fn, ...$rest)
 {
-    $args = tail(func_get_args());
     $numRequiredParams = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
-    return function (/* ...$args */) use ($fn, $args, $numRequiredParams) {
-        $args = array_merge($args, func_get_args());
+    return function (...$args) use ($fn, $rest, $numRequiredParams) {
+        $args = array_merge($rest, $args);
 
-        if ($numRequiredParams > count($args)) {
-            return call_user_func_array(partial, array_merge([$fn], $args));
-        }
-
-        return call_user_func_array($fn, $args);
+        return $numRequiredParams > count($args)
+            ? partial($fn, ...$args)
+            : $fn(...$args);
     };
 }

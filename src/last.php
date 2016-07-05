@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const last = '\Sergiors\Functional\last';
+const last = __NAMESPACE__.'\last';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>

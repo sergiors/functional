@@ -2,9 +2,7 @@
 
 namespace Sergiors\Functional;
 
-use Sergiors\Pipeline\Pipeline;
-
-const pipe = '\Sergiors\Functional\pipe';
+const pipe = '\pipe';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
@@ -14,7 +12,27 @@ const pipe = '\Sergiors\Functional\pipe';
  *
  * @return mixed
  */
-function pipe(/* ...$args */)
+function pipe(callable ...$callbacks)
 {
-    return new Pipeline(func_get_args());
+    return new class(...$callbacks)
+    {
+        private $callbacks;
+
+        public function __construct(callable ...$callbacks)
+        {
+            $this->callbacks = $callbacks;
+        }
+
+        public function pipe(callable ...$callbacks)
+        {
+            return pipe(...array_merge($this->callbacks, $callbacks));
+        }
+
+        public function __invoke($payload, ...$rest)
+        {
+            return array_reduce($this->callbacks, function ($payload, $callback) use ($rest) {
+                return $callback($payload, ...$rest);
+            }, $payload);
+        }
+    };
 }

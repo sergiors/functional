@@ -2,19 +2,18 @@
 
 namespace Sergiors\Functional;
 
-const deleteat = '\Sergiors\Functional\deleteat';
+const deleteat = __NAMESPACE__.'\deleteat';
 
-function deleteat(/* ...$args */)
+/**
+ * @param array ...$args
+ *
+ * @return mixed
+ */
+function deleteat(...$args)
 {
-    $args = func_get_args();
-
-    $deleteat = function ($n, array $xs) {
-        if ($n > 0) {
-            return array_merge(take($n, $xs), drop($n + 1, $xs));
-        }
-
-        return $xs;
-    };
-
-    return call_user_func_array(partial($deleteat), $args);
+    return partial(function ($n, array $xss) {
+        return $n > 0
+            ? array_merge(take($n, $xss), drop($n + 1, $xss))
+            : $xss;
+    })(...$args);
 }

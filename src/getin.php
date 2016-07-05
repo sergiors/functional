@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const getin = '\Sergiors\Functional\getin';
+const getin = __NAMESPACE__.'\getin';
 
 /**
  * Returns the value in a nested associative structure,
@@ -13,25 +13,21 @@ const getin = '\Sergiors\Functional\getin';
  *
  * @link https://clojuredocs.org/clojure.core/get-in
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
-function getin(/* ...$args */)
+function getin(...$args)
 {
-    $args = func_get_args();
-
-    $getin = function (array $xs, array $ks, $notfound = false) {
-        if (!array_key_exists(0, $ks)) {
+    return partial(function (array $xss, array $ks, $notfound = false) {
+        if (!has(0, $ks)) {
             return $notfound;
         }
 
-        $x = get($xs, $ks[0], $notfound);
+        $xs = get($xss, $ks[0], $notfound);
 
-        if (is_array($x)) {
-            return getin($x, array_slice($ks, 1), $notfound);
-        }
-
-        return $x;
-    };
-
-    return call_user_func_array(partial($getin), $args);
+        return is_array($xs)
+            ? getin($xs, tail($ks), $notfound)
+            : $xs;
+    })(...$args);
 }

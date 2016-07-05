@@ -2,31 +2,27 @@
 
 namespace Sergiors\Functional;
 
-const dropwhile = '\Sergiors\Functional\dropwhile';
+const dropwhile = __NAMESPACE__.'\dropwhile';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @return array
+ * @param array ...$args
+ *
+ * @return mixed
  */
-function dropwhile(/* ...$args */)
+function dropwhile(...$args)
 {
-    $args = func_get_args();
-
-    $dropwhile = function (callable $condition, array $xss) {
+    return partial(function (callable $pred, array $xss) {
         if ([] === $xss) {
             return [];
         }
 
-        $head = head($xss);
-        $tail = tail($xss);
+        $x = head($xss);
+        $xs = tail($xss);
 
-        if ($condition($head)) {
-            return dropwhile($condition, $tail);
-        }
-
-        return $xss;
-    };
-
-    return call_user_func_array(partial($dropwhile), $args);
+        return $pred($x)
+            ? dropwhile($pred, $xs)
+            : $xss;
+    })(...$args);
 }

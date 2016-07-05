@@ -2,20 +2,16 @@
 
 namespace Sergiors\Functional;
 
-const prop = '\Sergiors\Functional\prop';
+const prop = __NAMESPACE__.'\prop';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function prop(/* ...$args */)
+function prop(...$args)
 {
-    $args = func_get_args();
-
-    $prop = function ($x, array $xs) {
-        return get($xs, $x, false);
-    };
-
-    return call_user_func_array(partial($prop), $args);
+    return partial(function ($x, array $xss) {
+        return get($xss, $x, false);
+    })(...$args);
 }

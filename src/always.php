@@ -2,10 +2,12 @@
 
 namespace Sergiors\Functional;
 
-const always = '\Sergiors\Functional\always';
+const always = __NAMESPACE__.'\always';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ *
+ * @param mixed $x
  *
  * @return mixed
  */

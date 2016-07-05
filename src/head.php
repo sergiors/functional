@@ -2,27 +2,18 @@
 
 namespace Sergiors\Functional;
 
-const head = '\Sergiors\Functional\head';
+const head = __NAMESPACE__.'\head';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param mixed $xs
+ * @param mixed $xss
  *
  * @return mixed
  */
-function head($xs)
+function head(array $xss)
 {
-    if ([] === $xs
-        || '' === $xs
-        || null === $xs
-    ) {
-        return null;
-    }
-
-    if (is_array($xs)) {
-        return array_values($xs)[0];
-    }
-
-    return $xs[0];
+    return [] === $xss
+        ? null
+        : array_values($xss)[0];
 }

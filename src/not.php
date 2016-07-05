@@ -2,10 +2,12 @@
 
 namespace Sergiors\Functional;
 
-const not = '\Sergiors\Functional\not';
+const not = __NAMESPACE__.'\not';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
+ *
+ * @param mixed $x
  *
  * @return mixed
  */

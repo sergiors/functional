@@ -2,22 +2,20 @@
 
 namespace Sergiors\Functional;
 
-const flatten = '\Sergiors\Functional\flatten';
+const flatten = __NAMESPACE__.'\flatten';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param array $xs
+ * @param array $xss
  *
  * @return mixed
  */
-function flatten(array $xs)
+function flatten(array $xss)
 {
-    return array_reduce($xs, function ($carry, $x) {
-        if (is_array($x)) {
-            return array_merge($carry, flatten($x));
-        }
-
-        return array_merge($carry, [$x]);
+    return array_reduce($xss, function ($carry, $x) {
+        return is_array($x)
+            ? array_merge($carry, flatten($x))
+            : array_merge($carry, [$x]);
     }, []);
 }

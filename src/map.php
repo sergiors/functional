@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const map = '\Sergiors\Functional\map';
+const map = __NAMESPACE__.'\map';
 
 /**
  * Just an alias.
@@ -11,9 +11,7 @@ const map = '\Sergiors\Functional\map';
  *
  * @link http://php.net/array_map
  */
-function map(/* ...$args */)
+function map(...$args)
 {
-    $args = func_get_args();
-
-    return call_user_func_array(partial('array_map'), $args);
+    return partial('array_map')(...$args);
 }

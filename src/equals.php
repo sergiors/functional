@@ -2,20 +2,18 @@
 
 namespace Sergiors\Functional;
 
-const equals = '\Sergiors\Functional\equals';
+const equals = __NAMESPACE__.'\equals';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
-function equals(/* ...$args */)
+function equals(...$args)
 {
-    $args = func_get_args();
-
-    $equals = function ($a, $b) {
+    return partial(function ($a, $b) {
         return $a === $b;
-    };
-
-    return call_user_func_array(partial($equals), $args);
+    })(...$args);
 }

@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const lte = '\Sergiors\Functional\lte';
+const lte = __NAMESPACE__.'\lte';
 
 /**
  * Less than or equals to
@@ -11,13 +11,9 @@ const lte = '\Sergiors\Functional\lte';
  *
  * @return mixed
  */
-function lte(/* ...$args */)
+function lte(...$args)
 {
-    $args = func_get_args();
-
-    $lte = function ($a, $b) {
+    return partial(function ($a, $b) {
         return $a <= $b;
-    };
-
-    return call_user_func_array(partial($lte), $args);
+    })(...$args);
 }

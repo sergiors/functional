@@ -2,30 +2,26 @@
 
 namespace Sergiors\Functional;
 
+const takewhile = __NAMESPACE__.'\takewhile';
+
 /**
  * @author Marcelo Camargo <marcelocamargo@linuxmail.org>
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return array
  */
-function takewhile(/* ...$args */)
+function takewhile(...$args)
 {
-    $args = func_get_args();
-
-    $takewhile = function (callable $condition, array $xss) {
+    return partial(function (callable $pred, array $xss) {
         if ([] === $xss) {
             return [];
         }
 
-        $head = head($xss);
-        $tail = tail($xss);
+        $x = head($xss);
+        $xs = tail($xss);
 
-        if ($condition($head)) {
-            return array_merge([$head], takewhile($condition, $tail));
-        }
-
-        return [];
-    };
-
-    return call_user_func_array(partial($takewhile), $args);
+        return $pred($x)
+            ? array_merge([$x], takewhile($pred, $xs))
+            : [];
+    })(...$args);
 }

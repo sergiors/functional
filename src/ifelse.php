@@ -2,26 +2,20 @@
 
 namespace Sergiors\Functional;
 
-const ifelse = '\Sergiors\Functional\ifelse';
+const ifelse = __NAMESPACE__.'\ifelse';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @return mixed
  */
-function ifelse(/* ...$args */)
+function ifelse(...$args)
 {
-    $args = func_get_args();
-
-    $ifelse = function (callable $condition, callable $ontrue, callable $onfalse) {
-        return function ($x) use ($condition, $ontrue, $onfalse) {
-            if ($condition($x)) {
-                return $ontrue($x);
-            }
-
-            return $onfalse($x);
+    return (function (callable $pred, callable $ontrue, callable $onfalse) {
+        return function ($x) use ($pred, $ontrue, $onfalse) {
+            return $pred($x)
+                ? $ontrue($x)
+                : $onfalse($x);
         };
-    };
-
-    return call_user_func_array(partial($ifelse), $args);
+    })(...$args);
 }

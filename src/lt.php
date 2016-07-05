@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const lt = '\Sergiors\Functional\lt';
+const lt = __NAMESPACE__.'\lt';
 
 /**
  * Less than
@@ -11,13 +11,9 @@ const lt = '\Sergiors\Functional\lt';
  *
  * @return mixed
  */
-function lt(/* ...$args */)
+function lt(...$args)
 {
-    $args = func_get_args();
-
-    $lt = function ($a, $b) {
+    return partial(function ($a, $b) {
         return $a < $b;
-    };
-
-    return call_user_func_array(partial($lt), $args);
+    })(...$args);
 }

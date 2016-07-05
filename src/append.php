@@ -2,20 +2,18 @@
 
 namespace Sergiors\Functional;
 
-const append = '\Sergiors\Functional\append';
+const append = __NAMESPACE__.'\append';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
-function append(/* ...$args */)
+function append(...$args)
 {
-    $args = func_get_args();
-
-    $append = function ($x, array $xs) {
+    return partial(function ($x, array $xs) {
         return array_merge($xs, [$x]);
-    };
-
-    return call_user_func_array(partial($append), $args);
+    })(...$args);
 }

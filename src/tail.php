@@ -2,16 +2,16 @@
 
 namespace Sergiors\Functional;
 
-const tail = '\Sergiors\Functional\tail';
+const tail = __NAMESPACE__.'\tail';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param array $xs
+ * @param array $xss
  *
  * @return array
  */
-function tail(array $xs)
+function tail(array $xss)
 {
-    return array_slice($xs, 1);
+    return array_slice($xss, 1);
 }

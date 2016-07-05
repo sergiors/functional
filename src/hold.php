@@ -2,31 +2,25 @@
 
 namespace Sergiors\Functional;
 
-const hold = '\Sergiors\Functional\hold';
+const hold = __NAMESPACE__.'\hold';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @param callable $fn
+ * @param array ...$args
  *
  * @return mixed
  */
-function hold(callable $fn /* ...$args */)
+function hold(callable $fn, ...$args)
 {
-    $placeholder = pipe(filter(function ($x) {
+    $ks = pipe(filter(function ($x) {
         return _ === $x;
-    }))->pipe('array_keys');
-
-    $args = array_slice(func_get_args(), 1);
-    $ks = $placeholder($args);
+    }))->pipe('array_keys')($args);
 
     return function ($x) use ($fn, $args, $ks) {
-        if ([] === $ks) {
-            return call_user_func_array($fn, array_merge($args, [$x]));
-        }
-
-        return call_user_func_array($fn, array_replace($args, [
-            $ks[0] => $x
-        ]));
+        return [] === $ks
+            ? $fn(...array_merge($args, [$x]))
+            : $fn(...array_replace($args, [$ks[0] => $x]));
     };
 }

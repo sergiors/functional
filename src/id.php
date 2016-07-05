@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const id = '\Sergiors\Functional\id';
+const id = __NAMESPACE__.'\id';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
