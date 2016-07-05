@@ -9,7 +9,7 @@ $join = F\pipe(F\flatten, F\partial('implode', ', '));
 $mapCountry = F\map(function ($x) {
     return $x['country'];
 });
-$countries = F\pipe($mapCountry, $join)->strtoupper(); // or `->pipe('strtoupper')`
+$countries = F\pipe($mapCountry, $join)->pipe('strtoupper');
 
 $mapCity = F\map(function ($x) {
     return $x['cities'];

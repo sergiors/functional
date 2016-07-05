@@ -38,6 +38,7 @@
             "src/each.php",
             "src/equals.php",
             "src/filter.php",
+            "src/find.php",
             "src/flatten.php",
             "src/getin.php",
             "src/get.php",
