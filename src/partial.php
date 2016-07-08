@@ -14,13 +14,13 @@ const partial = __NAMESPACE__.'\partial';
  */
 function partial(callable $fn, ...$rest)
 {
-    $numRequiredParams = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
+    $argslen = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
-    return function (...$args) use ($fn, $rest, $numRequiredParams) {
+    return function (...$args) use ($fn, $rest, $argslen) {
         $args = array_merge($rest, $args);
 
-        return $numRequiredParams > count($args)
-            ? partial($fn, ...$args)
-            : $fn(...$args);
+        return array_key_exists($argslen - 1, $args)
+            ? $fn(...$args)
+            : partial($fn, ...$args);
     };
 }

@@ -25,7 +25,7 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
         })->map(function ($a) {
             return $a + 1;
         })->each(function ($val, $key) use ($scores) {
-            $this->assertEquals($scores[$key] + 1, $val);
+            $this->assertEquals($scores->get($key) + 1, $val);
         })->reduce(function ($acc, $x) {
             return $acc + $x;
         }, 0);
@@ -56,27 +56,6 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
 
         $ls3 = $ls2->append('Jack');
         $this->assertNotSame($ls2, $ls3);
-    }
-
-    /**
-     * @test
-     */
-    public function shouldChangeArray()
-    {
-        $collection = new Collection(['name' => 'Jimi']);
-
-        $this->assertTrue(isset($collection['name']));
-
-        $collection['lastname'] = 'Hendrix';
-
-        $this->assertTrue(isset($collection['lastname']));
-
-        $collection[] = 'just value';
-        $this->assertEquals(3, $collection->count());
-
-        unset($collection[0]);
-        unset($collection['tests']);
-        $this->assertEquals(2, $collection->count());
     }
 
     /**

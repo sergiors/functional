@@ -5,7 +5,7 @@ namespace Sergiors\Functional;
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  */
-class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
+class Collection implements \IteratorAggregate, \Countable
 {
     /**
      * @var array
@@ -18,6 +18,26 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     public function __construct(array $xs)
     {
         $this->xs = $xs;
+    }
+
+    /**
+     * @param mixed $offset
+     *
+     * @return mixed
+     */
+    public function get($offset)
+    {
+        return get($this->xs, $offset);
+    }
+
+    /**
+     * @param mixed $offset
+     *
+     * @return mixed
+     */
+    public function has($offset)
+    {
+        return has($offset, $this->xs);
     }
 
     /**
@@ -121,50 +141,5 @@ class Collection implements \ArrayAccess, \IteratorAggregate, \Countable
     public function toArray()
     {
         return $this->xs;
-    }
-
-    /**
-     * @param mixed $offset
-     *
-     * @return bool
-     */
-    public function offsetExists($offset)
-    {
-        return has($offset, $this->xs);
-    }
-
-    /**
-     * @param mixed $offset
-     *
-     * @return mixed
-     */
-    public function offsetGet($offset)
-    {
-        return get($this->xs, $offset, null);
-    }
-
-    /**
-     * @param mixed $offset
-     *
-     * @param mixed $x
-     */
-    public function offsetSet($offset, $x)
-    {
-        if (null === $offset) {
-            $this->xs[] = $x;
-            return;
-        }
-
-        $this->xs[$offset] = $x;
-    }
-
-    /**
-     * @param mixed $offset
-     */
-    public function offsetUnset($offset)
-    {
-        if ($this->offsetExists($offset)) {
-            unset($this->xs[$offset]);
-        }
     }
 }

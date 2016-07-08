@@ -10,6 +10,8 @@ const pipe = '\pipe';
  * Performs left-to-right function composition.
  * The leftmost function may have any arity; the remaining functions must be unary.
  *
+ * @param \callable[] ...$callbacks
+ * 
  * @return mixed
  */
 function pipe(callable ...$callbacks)

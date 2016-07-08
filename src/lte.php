@@ -9,6 +9,8 @@ const lte = __NAMESPACE__.'\lte';
  *
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
 function lte(...$args)

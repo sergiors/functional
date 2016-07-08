@@ -7,6 +7,8 @@ const prop = __NAMESPACE__.'\prop';
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
 function prop(...$args)

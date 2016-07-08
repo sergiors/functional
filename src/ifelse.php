@@ -7,6 +7,8 @@ const ifelse = __NAMESPACE__.'\ifelse';
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
 function ifelse(...$args)

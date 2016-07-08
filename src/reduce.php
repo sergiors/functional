@@ -9,6 +9,8 @@ const reduce = __NAMESPACE__.'\reduce';
  *
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array ...$args
+ *
  * @return mixed
  */
 function reduce(...$args)

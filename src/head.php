@@ -7,7 +7,7 @@ const head = __NAMESPACE__.'\head';
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
- * @param mixed $xss
+ * @param array $xss
  *
  * @return mixed
  */

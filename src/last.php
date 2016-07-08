@@ -7,6 +7,8 @@ const last = __NAMESPACE__.'\last';
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @pram array $xss
+ *
  * @return mixed
  */
 function last(array $xss)

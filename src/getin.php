@@ -20,7 +20,7 @@ const getin = __NAMESPACE__.'\getin';
 function getin(...$args)
 {
     return partial(function (array $xss, array $ks, $notfound = false) {
-        if (!has(0, $ks)) {
+        if (not(has(0, $ks))) {
             return $notfound;
         }
 

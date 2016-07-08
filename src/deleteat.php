@@ -5,6 +5,9 @@ namespace Sergiors\Functional;
 const deleteat = __NAMESPACE__.'\deleteat';
 
 /**
+ * @author Marcelo Camargo <marcelocamargo@linuxmail.org>
+ * @author Sérgio Rafael Siqueira
+ *
  * @param array ...$args
  *
  * @return mixed

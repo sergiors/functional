@@ -8,6 +8,8 @@ const takewhile = __NAMESPACE__.'\takewhile';
  * @author Marcelo Camargo <marcelocamargo@linuxmail.org>
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
+ * @param array ...$args
+ *
  * @return array
  */
 function takewhile(...$args)

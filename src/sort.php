@@ -15,7 +15,7 @@ function sort(array $xss)
 {
     $xss = array_values($xss);
 
-    if (!has(1, $xss)) {
+    if (not(has(1, $xss))) {
         return $xss;
     }
 
