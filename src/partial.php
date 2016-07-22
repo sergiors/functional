@@ -19,7 +19,7 @@ function partial(callable $fn, ...$rest)
     return function (...$args) use ($fn, $rest, $argslen) {
         $args = array_merge($rest, $args);
 
-        return array_key_exists($argslen - 1, $args)
+        return isset($args[$argslen - 1])
             ? $fn(...$args)
             : partial($fn, ...$args);
     };
