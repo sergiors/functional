@@ -27,6 +27,7 @@
         },
         "files": [
             "src/_.php",
+            "src/allpass.php",
             "src/always.php",
             "src/append.php",
             "src/compose.php",
