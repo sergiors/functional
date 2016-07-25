@@ -14,9 +14,7 @@ const hold = __NAMESPACE__.'\hold';
  */
 function hold(callable $fn, ...$args)
 {
-    $ks = pipe(filter(function ($x) {
-        return _ === $x;
-    }))->pipe('array_keys')($args);
+    $ks = pipe(filter(equals(_)), 'array_keys')($args);
 
     return function ($x) use ($fn, $args, $ks) {
         return [] === $ks
