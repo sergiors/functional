@@ -21,7 +21,7 @@ How to use
 ```php
 use Sergiors\Functional as F;
 
-$addFourNumbers = funciton ($a, $b, $c, $d) {
+$addFourNumbers = function ($a, $b, $c, $d) {
     return $a + $b + $c + $d;
 };
 
