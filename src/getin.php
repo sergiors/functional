@@ -20,14 +20,9 @@ const getin = __NAMESPACE__.'\getin';
 function getin(...$args)
 {
     return partial(function (array $xss, array $ks, $notfound = false) {
-        if (not(has(0, $ks))) {
-            return $notfound;
-        }
-
-        $xs = get($xss, $ks[0], $notfound);
-
-        return is_array($xs)
-            ? getin($xs, tail($ks), $notfound)
-            : $xs;
+        $success = function (array $ks) use ($xss, $notfound) {
+            return ifelse('is_array', hold(getin, _, tail($ks), $notfound), id)(get($xss, $ks[0], $notfound));
+        };
+        return ifElse(has(0), $success, always($notfound))($ks);
     })(...$args);
 }
