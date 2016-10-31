@@ -18,10 +18,8 @@ const get = __NAMESPACE__.'\get';
 function get(...$args)
 {
     return partial(function (array $xss, $x, $notfound = false) {
-        $fn = ifelse(has($x), function (array $xss) use ($x) {
+        return ifelse(has($x), function (array $xss) use ($x) {
             return $xss[$x];
-        }, always($notfound));
-        
-        return $fn($xss);
+        }, always($notfound))($xss);
     })(...$args);
 }

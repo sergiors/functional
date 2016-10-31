@@ -21,11 +21,8 @@ function getin(...$args)
 {
     return partial(function (array $xss, array $ks, $notfound = false) {
         $success = function (array $ks) use ($xss, $notfound) {
-            $fn = ifelse('is_array', hold(getin, _, tail($ks), $notfound), id);
-            return $fn(get($xss, $ks[0], $notfound));
+            return ifelse('is_array', hold(getin, _, tail($ks), $notfound), id)(get($xss, $ks[0], $notfound));
         };
-        $fn = ifElse(has(0), $success, always($notfound));
-
-        return $fn($ks);
+        return ifElse(has(0), $success, always($notfound))($ks);
     })(...$args);
 }
