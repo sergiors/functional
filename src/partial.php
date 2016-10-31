@@ -8,11 +8,11 @@ const partial = __NAMESPACE__.'\partial';
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
  *
  * @param callable $fn
- * @param array ...$rest
+ * @param array ...$args
  *
  * @return mixed
  */
-function partial(callable $fn, ...$rest)
+function partial(callable $fn, ...$args)
 {
     $arity = (new \ReflectionFunction($fn))->getNumberOfRequiredParameters();
 
@@ -22,3 +22,4 @@ function partial(callable $fn, ...$rest)
             return partial($fn, ...array_merge($args, $restArgs));
         };
 }
+
