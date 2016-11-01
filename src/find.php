@@ -14,16 +14,9 @@ const find = __NAMESPACE__.'\find';
  */
 function find(...$args)
 {
-    return partial(function (callable $pred, $xss) {
-        if ([] == $xss) {
-            return null;
-        };
-
-        $x = head($xss);
-        $xs = tail($xss);
-
-        return $pred($x)
-            ? $x
-            : find($pred, $xs);
+    return partial(function (callable $pred, array $xss) {
+        return ifelse(equals([]), always(null), function (array $xss) use ($pred) {
+            return ifElse($pred, id, always(find($pred, tail($xss))))(head($xss));
+        })($xss);
     })(...$args);
 }
