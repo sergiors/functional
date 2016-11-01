@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const ifelse = __NAMESPACE__.'\ifelse';
+const ifElse = __NAMESPACE__.'\ifElse';
 
 /**
  * @author Sérgio Rafael Siqueira <sergio@inbep.com.br>
@@ -11,7 +11,7 @@ const ifelse = __NAMESPACE__.'\ifelse';
  *
  * @return mixed
  */
-function ifelse(...$args)
+function ifElse(...$args)
 {
     return (function (callable $pred, callable $ontrue, callable $onfalse) {
         return function ($x) use ($pred, $ontrue, $onfalse) {

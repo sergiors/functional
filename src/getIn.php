@@ -2,7 +2,7 @@
 
 namespace Sergiors\Functional;
 
-const getin = __NAMESPACE__.'\getin';
+const getIn = __NAMESPACE__.'\getIn';
 
 /**
  * Returns the value in a nested associative structure,
@@ -17,12 +17,11 @@ const getin = __NAMESPACE__.'\getin';
  *
  * @return mixed
  */
-function getin(...$args)
+function getIn(...$args)
 {
     return partial(function (array $xss, array $ks, $notfound = false) {
-        $success = function (array $ks) use ($xss, $notfound) {
-            return ifelse('is_array', hold(getin, _, tail($ks), $notfound), id)(get($xss, $ks[0], $notfound));
-        };
-        return ifElse(has(0), $success, always($notfound))($ks);
+        return ifElse(has(0), function (array $ks) use ($xss, $notfound) {
+            return ifElse('is_array', hold(getIn, _, tail($ks), $notfound), id)(get($xss, $ks[0], $notfound));
+        }, always($notfound))($ks);
     })(...$args);
 }
